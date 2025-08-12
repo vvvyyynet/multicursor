@@ -1,22 +1,58 @@
 <script lang="ts">
 	const seriesData = [
 		{
-			title1: 'Demo',
-			title2: 'Puzzle',
-			link: '/puzzles/demo',
-			text: 'Random Demo examples',
+			title1: 'Editor Basics',
+			title2: 'Puzzles',
+			link: '/puzzles/editor-basics',
+			text: 'Learn how to efficiently navigate and select text in the editor.',
 			footer1: 'by Levyn',
 			footer2: 'Easy',
 			imgSrc: '/img/preview-demo.png'
 		},
 		{
-			title1: 'Real Examples',
-			title2: 'Puzzle',
-			link: '/puzzles/real',
-			text: 'Some real examples from daily practice',
+			title1: 'Multicursor Basics',
+			title2: 'Puzzles',
+			link: '/puzzles/multicursor-basics',
+			text: 'Learn the keybindings to enter multicursor editing',
 			footer1: 'by Levyn',
-			footer2: 'Medium to hard',
-			imgSrc: '/img/preview-llm.png'
+			footer2: 'Easy',
+			imgSrc: '/img/preview-demo.png'
+		},
+		{
+			title1: 'Multicursor Advanced',
+			title2: 'Puzzles',
+			link: '/puzzles/multicursor-advanced',
+			text: 'Learn smart patterns to make multicursor editing more efficient',
+			footer1: 'by Levyn',
+			footer2: 'Medium',
+			imgSrc: '/img/preview-demo.png'
+		},
+		{
+			title1: 'Format conversions',
+			title2: 'Puzzles',
+			link: '/puzzles/format-conversions',
+			text: 'Learn how to apply multicursor techniques for format conversions',
+			footer1: 'by Levyn',
+			footer2: 'Medium',
+			imgSrc: '/img/preview-demo.png'
+		},
+		{
+			title1: 'DH Special',
+			title2: 'Puzzles',
+			link: '/puzzles/dh-special',
+			text: 'A set of examples made for DH-scholars',
+			footer1: 'by Levyn',
+			footer2: 'Medium',
+			imgSrc: '/img/preview-demo.png'
+		},
+		{
+			title1: 'Edge Cases',
+			title2: 'Puzzles',
+			link: '/puzzles/edge-cases',
+			text: 'Test the limits of multicursor editing',
+			footer1: 'by Levyn',
+			footer2: 'Hard',
+			imgSrc: '/img/preview-demo.png'
 		}
 	];
 </script>

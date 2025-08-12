@@ -8,6 +8,7 @@
 	import { editorSettings } from '$lib/stores/stores.svelte';
 
 	let {
+		puzzleType = undefined,
 		title = '',
 		subtitle = '',
 		explanation = '',
@@ -71,8 +72,6 @@
 	let valStart = $derived(valueStart + '\n\n\n\n');
 	let valSolution = $derived(valueSolution + '\n\n\n\n');
 
-	$inspect(valueStart);
-
 	let value = $state(''); //! IMPORTANT: This will be set to valueStart ONLY INSIDE the Editor component (needed for onMount-hack)
 	let editorView: EditorView = $state();
 
@@ -123,26 +122,29 @@
 <h1 class="h2">{title}: <span class="h4">{subtitle}</span></h1>
 <p class="">{explanation}</p>
 
-<div class="mt-10">
-	<p class="">Target:</p>
-	<EditorSolution
-		valueSolution={valSolution}
-		classes="bg-surface-950-50 opacity-75 text-surface-50-950 my-2"
-	/>
-</div>
-
-<div class="mt-10">
-	<p class="">Edit here:</p>
-	<Editor
-		editorSettings
-		bind:editorView
-		bind:value
-		valueStart={valStart}
-		valueSolution={valSolution}
-		{CmdCmbChips}
-		bind:cmdLog
-		classes="bg-surface-950-50 text-surface-50-950"
-	/>
+<div class="mt-10 flex w-full items-start justify-start gap-10">
+	{#if puzzleType === 'puzzle'}
+		<div class="h-full w-full">
+			<p class="">Target:</p>
+			<EditorSolution
+				valueSolution={valSolution}
+				classes="bg-surface-950-50 opacity-75 text-surface-50-950 my-2"
+			/>
+		</div>
+	{/if}
+	<div class="h-full w-full">
+		<p class="">Edit here:</p>
+		<Editor
+			editorSettings
+			bind:editorView
+			bind:value
+			valueStart={valStart}
+			valueSolution={valSolution}
+			{CmdCmbChips}
+			bind:cmdLog
+			classes="bg-surface-950-50 text-surface-50-950"
+		/>
+	</div>
 </div>
 
 <!-- Display value with all whitespaces and \n -->

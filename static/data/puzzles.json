@@ -1,20 +1,31 @@
 {
-	"demo": [
+	"editor-basics": [
 		{
-			"title": "#1",
-			"subtitle": "Foo bar",
-			"explanation": "This one is very easy!",
-			"valueStart": "Foo",
+			"type": "todo",
+			"title": "Navigation #1",
+			"subtitle": "ArrowKeys",
+			"explanation": "Use the ArrowKeys to navigate the text",
+			"valueStart": "\"title\": \"Navigation #1\",\n\"subtitle\": \"ArrowKeys\",\n\"explanation\": \"Use the ArrowKeys to navigate the text\",",
 			"valueSolution": "Bar"
 		},
 		{
-			"title": "#2",
-			"subtitle": "This one is harder",
-			"explanation": "You can do it!",
-			"valueStart": "idCollector.all.push(layerId_polygonContourGlow);\nidCollector.types.polygons.all.push(layerId_polygonContourGlow);\nidCollector.types.polygons.contours.all.push(layerId_polygonContourGlow);\nidCollector.types.polygons.contours.glows.push(layerId_polygonContourGlow);\nidCollector.shapes.special.lineGlows.push(layerId_polygonContourGlow);",
-			"valueSolution": "pushToPath(idCollector, 'all', layerId_polygonContourGlow);\npushToPath(idCollector, 'types.polygons.all', layerId_polygonContourGlow);\npushToPath(idCollector, 'types.polygons.contours.all', layerId_polygonContourGlow);\npushToPath(idCollector, 'types.polygons.contours.glows', layerId_polygonContourGlow);\npushToPath(idCollector, 'shapes.special.lineGlows', layerId_polygonContourGlow);"
+			"type": "todo",
+			"title": "Navigation #1",
+			"subtitle": "Mod + ArrowKeys",
+			"explanation": "Use the ArrowKeys while holding Ctrl/Cmd to jump word by word. Note the different behavior between `foo-bar` and `foo_bar`",
+			"valueStart": "\"title\": \"Navigation #1\",\n\"subtitle\": \"ArrowKeys\",\n\"explanation\": \"Use the ArrowKeys to navigate the text\",",
+			"valueSolution": "Bar"
 		},
 		{
+			"type": "todo",
+			"title": "Navigation #1",
+			"subtitle": "Shift + ArrowKeys",
+			"explanation": "Use the ArrowKeys while holding Shift to select the text",
+			"valueStart": "\"title\": \"Navigation #1\",\n\"subtitle\": \"ArrowKeys\",\n\"explanation\": \"Use the ArrowKeys to navigate the text\",",
+			"valueSolution": "Bar"
+		},
+		{
+			"type": "puzzle",
 			"title": "#3",
 			"subtitle": "Foo bar 2",
 			"explanation": "This one is very easy!",
@@ -22,8 +33,49 @@
 			"valueSolution": "Bar Bar"
 		}
 	],
-	"real": [
+	"multicursor-basics": [
 		{
+			"type": "puzzle",
+			"title": "#1",
+			"subtitle": "Foo bar",
+			"explanation": "This one is very easy!",
+			"valueStart": "Foo",
+			"valueSolution": "Bar"
+		}
+	],
+	"multicursor-advanced": [
+		{
+			"type": "puzzle",
+			"title": "#1",
+			"subtitle": "Foo bar",
+			"explanation": "This one is very easy!",
+			"valueStart": "Foo",
+			"valueSolution": "Bar"
+		}
+	],
+	"format-conversions": [
+		{
+			"type": "puzzle",
+			"title": "#1",
+			"subtitle": "Foo bar",
+			"explanation": "This one is very easy!",
+			"valueStart": "Foo",
+			"valueSolution": "Bar"
+		}
+	],
+	"edge-cases": [
+		{
+			"type": "puzzle",
+			"title": "#1",
+			"subtitle": "Foo bar",
+			"explanation": "This one is very easy!",
+			"valueStart": "Foo",
+			"valueSolution": "Bar"
+		}
+	],
+	"dh-special": [
+		{
+			"type": "puzzle",
 			"title": "Push to Path",
 			"subtitle": "medium",
 			"explanation": "",

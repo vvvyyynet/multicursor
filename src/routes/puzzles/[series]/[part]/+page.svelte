@@ -15,6 +15,7 @@
 
 <div class="mt-5 w-[90vw] border-3 border-black p-5">
 	<Puzzle
+		puzzleType={data.puzzle.type}
 		title={data.puzzle.title}
 		subtitle={data.puzzle.subtitle}
 		explanation={data.puzzle.explanation}
