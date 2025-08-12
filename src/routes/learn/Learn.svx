@@ -1,0 +1,71 @@
+# Background
+
+<a class="" href="#Shortcuts">Directly jump to shortcuts</a>
+
+## Editors
+
+### More powerful than WYSIWYG
+
+    Basic concepts of editors in contrast to e.g. MS Word. This will cover major differences, like
+    e.g. behavior of "jump to end-of-line".
+
+### IDE philosophies
+
+Are you using VS Code, Emacs, Vim, ... ? (Oh, by the way, there is also VS Codium!)
+
+### Engines (for web-devs)
+
+This website runs an editor in your browser using Javascript. Popular choices are <a href="#">Monaco</a> and <a href="#">CodeMirror6</a>
+
+## Operating Systems and Keyboards
+
+...
+
+## History of Multicursor
+
+Seit wann gibt es eigentlich Multicursor Editors?
+
+# Shortcuts <a id="Shortcuts"></a>
+
+## Basic Navigation
+
+    - arrows
+    - mod+arrows
+    - home+end (pageup/down)
+
+## Basic Selection
+
+    - shift
+
+## Basic Moving
+
+    - alt
+
+## Basic Copying
+
+    - mod+x/c/v
+    - middle click (won't work in multicursor mode)
+    - format pasting (does NOT work, not even in obsidian's live-view)
+
+## Multicursor
+
+    - Alt+Click
+    - Frame
+    - Mod+d
+    - Mod+Shift+l
+    - **Mod+u**
+    - Copy+Pasting
+
+# Strategies
+
+    - From the edge thinking
+    - How to delete empty lines?
+
+# Real-life examples
+
+    - mod+shift+left situations (e.g. wrong password... ok, mod+a would work too)
+    - Exceltabelle neu strukturieren
+    - Zeilen löschen mit `(Motiv)`
+    - Liste → Aufzählung
+
+<a class="underline" href="/contribute">Einen Use-case beitragen</a>

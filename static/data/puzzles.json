@@ -1,0 +1,35 @@
+{
+	"demo": [
+		{
+			"title": "#1",
+			"subtitle": "Foo bar",
+			"explanation": "This one is very easy!",
+			"valueStart": "Foo",
+			"valueSolution": "Bar"
+		},
+		{
+			"title": "#2",
+			"subtitle": "This one is harder",
+			"explanation": "You can do it!",
+			"valueStart": "idCollector.all.push(layerId_polygonContourGlow);\nidCollector.types.polygons.all.push(layerId_polygonContourGlow);\nidCollector.types.polygons.contours.all.push(layerId_polygonContourGlow);\nidCollector.types.polygons.contours.glows.push(layerId_polygonContourGlow);\nidCollector.shapes.special.lineGlows.push(layerId_polygonContourGlow);",
+			"valueSolution": "pushToPath(idCollector, 'all', layerId_polygonContourGlow);\npushToPath(idCollector, 'types.polygons.all', layerId_polygonContourGlow);\npushToPath(idCollector, 'types.polygons.contours.all', layerId_polygonContourGlow);\npushToPath(idCollector, 'types.polygons.contours.glows', layerId_polygonContourGlow);\npushToPath(idCollector, 'shapes.special.lineGlows', layerId_polygonContourGlow);"
+		},
+		{
+			"title": "#3",
+			"subtitle": "Foo bar 2",
+			"explanation": "This one is very easy!",
+			"valueStart": "Foo Foo",
+			"valueSolution": "Bar Bar"
+		}
+	],
+	"real": [
+		{
+			"title": "Push to Path",
+			"subtitle": "medium",
+			"explanation": "",
+			"valueStart": "idCollector.all.push(layerId_polygonContourGlow);",
+			"valueSolution": "pushToPath(idCollector, 'all', layerId_polygonContourGlow);\npushToPath(idCollector, 'types.polygons.all', layerId_polygonContourGlow);\npushToPath(idCollector, 'types.polygons.contours.all', layerId_polygonContourGlow);\npushToPath(idCollector, 'types.polygons.contours.glows', layerId_polygonContourGlow);\npushToPath(idCollector, 'shapes.special.lineGlows', layerId_polygonContourGlow);",
+			"hint": "**Fastest Solution:** duplicate template-line down (5x), multicursor-select all `push` with Ctrl+D, 2x(Left), Ctrl+Shift+Home, 2x(Ctrl+Shift+Right), Ctrl+X, move in multicursormode to `'all'`, Ctrl+D to highlight, Ctrl+V"
+		}
+	]
+}
