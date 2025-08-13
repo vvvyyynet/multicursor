@@ -19,6 +19,8 @@
 		setSolved = () => {}
 	} = $props();
 
+	let time = $state({ val: 0 }); // units: 1/10 sec
+
 	// Reset
 	function resetToStart(cmdLog: TcmdLog) {
 		// Reset editor
@@ -31,7 +33,7 @@
 		}
 
 		// Reset counters
-		// time = 0;
+		time.val = 0;
 		cmdCount = 0;
 		cmdCountAll = 0;
 
@@ -62,10 +64,8 @@
 	let value = $state(''); //! IMPORTANT: This will be set to valueStart ONLY INSIDE the Editor component (needed for onMount-hack)
 	let editorView: EditorView = $state();
 
-	let isSolved = false;
+	let isSolved = $derived(value === valSolution);
 	$effect(() => {
-		isSolved = value === valSolution;
-		console.log('SOOOLVED');
 		setSolved(isSolved);
 	});
 </script>
@@ -109,5 +109,13 @@
 
 {#if puzzleType === 'change'}
 	<PuzzleHistory {cmdLog} bind:editorView />
-	<PuzzleTimer {cmdLog} bind:editorView bind:isSolved {cmdCountAll} {cmdCount} {resetToStart} />
+	<PuzzleTimer
+		{cmdLog}
+		bind:editorView
+		{isSolved}
+		{cmdCountAll}
+		{cmdCount}
+		{resetToStart}
+		bind:time={time.val}
+	/>
 {/if}

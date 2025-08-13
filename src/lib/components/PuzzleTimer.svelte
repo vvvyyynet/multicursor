@@ -4,15 +4,15 @@
 	let {
 		cmdLog,
 		editorView = $bindable(),
-		isSolved = $bindable(),
+		isSolved,
 		cmdCountAll,
 		cmdCount,
-		resetToStart
+		resetToStart,
+		time = $bindable()
 	} = $props();
 
 	let visibleAccordion = $state(['main']);
 
-	let time = $state(0); // units: 1/10 sec
 	let timer;
 	function startTimer() {
 		editorView.focus();
@@ -26,6 +26,14 @@
 		}
 	}
 
+	// Start timer on first interaction with editor
+	$effect(() => {
+		if (cmdLog.list.length > 1 && !timer) {
+			startTimer();
+		}
+	});
+
+	// Stop timer when solved
 	$effect(() => {
 		if (isSolved) {
 			endTimer();

@@ -11,7 +11,6 @@
 	onMount(() => {
 		solved[data.slugOfSeries] = Array(puzzlesOfSeries.length).fill(false);
 	});
-	// $inspect(solved['editor-basics'])
 	let nSolved = $derived(solved[data.slugOfSeries].filter(Boolean).length);
 </script>
 
