@@ -1,7 +1,22 @@
 <script lang="ts">
+	import { page } from '$app/state';
 	import '../app.css';
 
 	let { children } = $props();
+
+	const menuNormalClass = 'text-surface-800-200';
+	const menuActiveClass = '!text-white-500 text-lg font-bold';
+
+	const slugs = [
+		{ slug: 'about', name: 'About' },
+		{ slug: 'learn', name: 'Learn' },
+		{ slug: 'puzzles', name: 'Puzzles' },
+		{ slug: 'editor', name: 'Editor' },
+		{ slug: 'contribute', name: 'Contribute' }
+	];
+	const testPage = (slug) => {
+		return page.url.pathname.includes(slug);
+	};
 </script>
 
 <!-- <div class="absolute w-full p-4"> -->
@@ -11,11 +26,13 @@
 <!-- </div> -->
 <nav class="m-2 mx-6 border-3 bg-surface-50-950 p-4">
 	<ul class="flex justify-start gap-8">
-		<li><a href="/about">About</a></li>
-		<li><a href="/learn">Learn</a></li>
-		<li><a href="/puzzles">Puzzles</a></li>
-		<li><a href="/editor">Editor</a></li>
-		<li><a href="/contribute">Contribute</a></li>
+		{#each slugs as slug}
+			<li>
+				<a class={[menuNormalClass, testPage(slug.slug) && menuActiveClass]} href={`/${slug.slug}`}
+					>{slug.name}</a
+				>
+			</li>
+		{/each}
 	</ul>
 </nav>
 

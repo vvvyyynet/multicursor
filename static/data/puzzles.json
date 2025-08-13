@@ -1,87 +1,172 @@
 {
-	"editor-basics": [
-		{
-			"type": "todo",
-			"title": "Navigation #1",
-			"subtitle": "ArrowKeys",
-			"explanation": "Use the ArrowKeys to navigate the text",
-			"valueStart": "\"title\": \"Navigation #1\",\n\"subtitle\": \"ArrowKeys\",\n\"explanation\": \"Use the ArrowKeys to navigate the text\",",
-			"valueSolution": "Bar"
+	"setsList": [
+		"editor-basics",
+		"multicursor-basics",
+		"multicursor-advanced",
+		"format-conversions",
+		"dh-special",
+		"edge-cases"
+	],
+	"puzzles": {
+		"editor-basics": {
+			"desc": {
+				"slug": "editor-basics",
+				"title1": "Editor Basics",
+				"title2": "Puzzles",
+				"text": "Learn how to efficiently navigate and select text in the editor.",
+				"footer1": "by Levyn",
+				"footer2": "Easy",
+				"imgSrc": "/img/preview-demo.png"
+			},
+			"puzzles": [
+				{
+					"type": "todo",
+					"slug": "1",
+					"title": "Navigation #1",
+					"subtitle": "ArrowKeys",
+					"explanation": "Use the ArrowKeys to navigate the text",
+					"valueStart": "\"title\": \"Navigation #1\",\n\"subtitle\": \"ArrowKeys\",\n\"explanation\": \"Use the ArrowKeys to navigate the text\",",
+					"valueSolution": "Bar"
+				},
+				{
+					"type": "todo",
+					"slug": "2",
+					"title": "Navigation #1",
+					"subtitle": "Mod + ArrowKeys",
+					"explanation": "Use the ArrowKeys while holding Ctrl/Cmd to jump word by word. Note the different behavior between `foo-bar` and `foo_bar`",
+					"valueStart": "\"title\": \"Navigation #1\",\n\"subtitle\": \"ArrowKeys\",\n\"explanation\": \"Use the ArrowKeys to navigate the text\",",
+					"valueSolution": "Bar"
+				},
+				{
+					"type": "todo",
+					"slug": "3",
+					"title": "Navigation #1",
+					"subtitle": "Shift + ArrowKeys",
+					"explanation": "Use the ArrowKeys while holding Shift to select the text",
+					"valueStart": "\"title\": \"Navigation #1\",\n\"subtitle\": \"ArrowKeys\",\n\"explanation\": \"Use the ArrowKeys to navigate the text\",",
+					"valueSolution": "Bar"
+				},
+				{
+					"type": "change",
+					"slug": "4",
+					"title": "#3",
+					"subtitle": "Foo bar 2",
+					"explanation": "This one is very easy!",
+					"valueStart": "Foo Foo",
+					"valueSolution": "Bar Bar"
+				}
+			]
 		},
-		{
-			"type": "todo",
-			"title": "Navigation #1",
-			"subtitle": "Mod + ArrowKeys",
-			"explanation": "Use the ArrowKeys while holding Ctrl/Cmd to jump word by word. Note the different behavior between `foo-bar` and `foo_bar`",
-			"valueStart": "\"title\": \"Navigation #1\",\n\"subtitle\": \"ArrowKeys\",\n\"explanation\": \"Use the ArrowKeys to navigate the text\",",
-			"valueSolution": "Bar"
+		"multicursor-basics": {
+			"desc": {
+				"slug": "multicursor-basics",
+				"title1": "Multicursor Basics",
+				"title2": "Puzzles",
+				"text": "Learn the keybindings to enter multicursor editing",
+				"footer1": "by Levyn",
+				"footer2": "Easy",
+				"imgSrc": "/img/preview-demo.png"
+			},
+			"puzzles": [
+				{
+					"type": "change",
+					"slug": "1",
+					"title": "#1",
+					"subtitle": "Foo bar",
+					"explanation": "This one is very easy!",
+					"valueStart": "Foo",
+					"valueSolution": "Bar"
+				}
+			]
 		},
-		{
-			"type": "todo",
-			"title": "Navigation #1",
-			"subtitle": "Shift + ArrowKeys",
-			"explanation": "Use the ArrowKeys while holding Shift to select the text",
-			"valueStart": "\"title\": \"Navigation #1\",\n\"subtitle\": \"ArrowKeys\",\n\"explanation\": \"Use the ArrowKeys to navigate the text\",",
-			"valueSolution": "Bar"
+		"multicursor-advanced": {
+			"desc": {
+				"slug": "multicursor-advanced",
+				"title1": "Multicursor Advanced",
+				"title2": "Puzzles",
+				"text": "Learn smart patterns to make multicursor editing more efficient",
+				"footer1": "by Levyn",
+				"footer2": "Medium",
+				"imgSrc": "/img/preview-demo.png"
+			},
+			"puzzles": [
+				{
+					"type": "change",
+					"slug": "1",
+					"title": "#1",
+					"subtitle": "Foo bar",
+					"explanation": "This one is very easy!",
+					"valueStart": "Foo",
+					"valueSolution": "Bar"
+				}
+			]
 		},
-		{
-			"type": "puzzle",
-			"title": "#3",
-			"subtitle": "Foo bar 2",
-			"explanation": "This one is very easy!",
-			"valueStart": "Foo Foo",
-			"valueSolution": "Bar Bar"
+		"format-conversions": {
+			"desc": {
+				"slug": "format-conversions",
+				"title1": "Format conversions",
+				"title2": "Puzzles",
+				"text": "Learn how to apply multicursor techniques for format conversions",
+				"footer1": "by Levyn",
+				"footer2": "Medium",
+				"imgSrc": "/img/preview-demo.png"
+			},
+			"puzzles": [
+				{
+					"type": "change",
+					"slug": "1",
+					"title": "#1",
+					"subtitle": "Foo bar",
+					"explanation": "This one is very easy!",
+					"valueStart": "Foo",
+					"valueSolution": "Bar"
+				}
+			]
+		},
+		"dh-special": {
+			"desc": {
+				"slug": "dh-special",
+				"title1": "DH Special",
+				"title2": "Puzzles",
+				"text": "A set of examples made for DH-scholars",
+				"footer1": "by Levyn",
+				"footer2": "Medium",
+				"imgSrc": "/img/preview-demo.png"
+			},
+			"puzzles": [
+				{
+					"type": "change",
+					"slug": "1",
+					"title": "#1",
+					"subtitle": "Foo bar",
+					"explanation": "This one is very easy!",
+					"valueStart": "Foo",
+					"valueSolution": "Bar"
+				}
+			]
+		},
+		"edge-cases": {
+			"desc": {
+				"slug": "edge-cases",
+				"title1": "Edge Cases",
+				"title2": "Puzzles",
+				"text": "Test the limits of multicursor editing",
+				"footer1": "by Levyn",
+				"footer2": "Hard",
+				"imgSrc": "/img/preview-demo.png"
+			},
+			"puzzles": [
+				{
+					"type": "change",
+					"slug": "1",
+					"title": "Push to Path",
+					"subtitle": "medium",
+					"explanation": "",
+					"valueStart": "idCollector.all.push(layerId_polygonContourGlow);",
+					"valueSolution": "pushToPath(idCollector, 'all', layerId_polygonContourGlow);\npushToPath(idCollector, 'types.polygons.all', layerId_polygonContourGlow);\npushToPath(idCollector, 'types.polygons.contours.all', layerId_polygonContourGlow);\npushToPath(idCollector, 'types.polygons.contours.glows', layerId_polygonContourGlow);\npushToPath(idCollector, 'shapes.special.lineGlows', layerId_polygonContourGlow);",
+					"hint": "**Fastest Solution:** duplicate template-line down (5x), multicursor-select all `push` with Ctrl+D, 2x(Left), Ctrl+Shift+Home, 2x(Ctrl+Shift+Right), Ctrl+X, move in multicursormode to `'all'`, Ctrl+D to highlight, Ctrl+V"
+				}
+			]
 		}
-	],
-	"multicursor-basics": [
-		{
-			"type": "puzzle",
-			"title": "#1",
-			"subtitle": "Foo bar",
-			"explanation": "This one is very easy!",
-			"valueStart": "Foo",
-			"valueSolution": "Bar"
-		}
-	],
-	"multicursor-advanced": [
-		{
-			"type": "puzzle",
-			"title": "#1",
-			"subtitle": "Foo bar",
-			"explanation": "This one is very easy!",
-			"valueStart": "Foo",
-			"valueSolution": "Bar"
-		}
-	],
-	"format-conversions": [
-		{
-			"type": "puzzle",
-			"title": "#1",
-			"subtitle": "Foo bar",
-			"explanation": "This one is very easy!",
-			"valueStart": "Foo",
-			"valueSolution": "Bar"
-		}
-	],
-	"edge-cases": [
-		{
-			"type": "puzzle",
-			"title": "#1",
-			"subtitle": "Foo bar",
-			"explanation": "This one is very easy!",
-			"valueStart": "Foo",
-			"valueSolution": "Bar"
-		}
-	],
-	"dh-special": [
-		{
-			"type": "puzzle",
-			"title": "Push to Path",
-			"subtitle": "medium",
-			"explanation": "",
-			"valueStart": "idCollector.all.push(layerId_polygonContourGlow);",
-			"valueSolution": "pushToPath(idCollector, 'all', layerId_polygonContourGlow);\npushToPath(idCollector, 'types.polygons.all', layerId_polygonContourGlow);\npushToPath(idCollector, 'types.polygons.contours.all', layerId_polygonContourGlow);\npushToPath(idCollector, 'types.polygons.contours.glows', layerId_polygonContourGlow);\npushToPath(idCollector, 'shapes.special.lineGlows', layerId_polygonContourGlow);",
-			"hint": "**Fastest Solution:** duplicate template-line down (5x), multicursor-select all `push` with Ctrl+D, 2x(Left), Ctrl+Shift+Home, 2x(Ctrl+Shift+Right), Ctrl+X, move in multicursormode to `'all'`, Ctrl+D to highlight, Ctrl+V"
-		}
-	]
+	}
 }

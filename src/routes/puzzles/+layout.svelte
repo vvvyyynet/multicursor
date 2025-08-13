@@ -1,6 +1,14 @@
 <script>
-	let { children } = $props();
+	let { data, children } = $props();
+
+	import { solved } from '$lib/stores/stores.svelte';
+	data.setsList.forEach((set) => {
+		solved[set] = Array(data.puzzles[set].puzzles.length).fill(false);
+	});
 </script>
 
-<h1 class="h1">Puzzles</h1>
+{#each solved as s}
+	<p>{s}</p>
+{/each}
+
 {@render children()}
