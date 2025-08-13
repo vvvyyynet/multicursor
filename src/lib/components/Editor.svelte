@@ -5,14 +5,10 @@
 	import { autocompletion, closeBrackets } from '@codemirror/autocomplete';
 	import { Prec } from '@codemirror/state';
 	import { javascript } from '@codemirror/lang-javascript';
-	import {
-		createCustomKeymap,
-		logKeyboardChanges,
-		logToHistory
-	} from '$lib/functions/customFunctions.svelte';
+	import { createCustomKeymap, logKeyboardChanges } from '$lib/functions/customFunctions.svelte';
 	import SettingsDrawer from './SettingsDrawer.svelte';
 	import { createEditorExtensions } from '$lib/functions/editorExtensions.svelte';
-	import { onMount } from 'svelte';
+	import { onMount, untrack } from 'svelte';
 	import type { TcmdLog } from '$lib/functions/historyFunctions.svelte';
 	import { Confetti } from 'svelte-confetti';
 
@@ -25,7 +21,7 @@
 				ntimes: 0,
 				cmd: 'initial',
 				combo: '',
-				description: '',
+				description: { combo: '', short: '', long: '' },
 				doc: undefined,
 				sel: undefined
 			}
@@ -42,17 +38,12 @@
 		valueSolution = '',
 		CmdCmbChips,
 		cmdLog = $bindable(cmdLogEmpty),
-		classes = ''
+		classes = '',
+		resetToStart = () => {}
 	} = $props();
 	let isCaseSensitive = $state(false);
 	let isWholeWord = $state(false);
 
-	$effect(() => {
-		console.log(valueStart);
-	});
-	$effect(() => {
-		console.log(editorSettings);
-	});
 	// Called when CodeMirror updates
 	let customKeymap = $derived(createCustomKeymap(editorView, cmdLog));
 
@@ -81,12 +72,16 @@
 			editorView.dispatch({
 				changes: { from: 0, to: editorView.state.doc.length, insert: valueStart }
 			});
-			logToHistory('init', editorView.state, cmdLog, 'init', editorSettings.history);
+			resetToStart(cmdLog);
 		}
 	};
 
-	onMount(() => {
-		updateEditor(valueStart);
+	// Update editor when valueStart (i.e. puzzle) changes
+	$effect(() => {
+		valueStart;
+		untrack(() => {
+			updateEditor(valueStart);
+		});
 	});
 </script>
 
@@ -126,10 +121,10 @@
 				EditorState.tabSize.of(16),
 				EditorState.readOnly.of(true), // Make the editor non-editable
 				showTooltip.of(null), // Disable tooltips by setting to null
-				autocompletion({
-					// Disable autocomplete suggestions
-					override: [() => []] // Return an empty array to suppress suggestions
-				}),
+				// autocompletion({
+				// 	// Disable autocomplete suggestions
+				// 	override: [() => []] // Return an empty array to suppress suggestions
+				// }),
 				closeBrackets(), // maybe not needed (it's to ensure that it's not disabled alongside autocompletion)
 				logKeyboardChanges(cmdLog),
 				...createEditorExtensions(editorView, cmdLog),

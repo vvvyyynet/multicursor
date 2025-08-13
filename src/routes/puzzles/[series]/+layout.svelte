@@ -1,4 +1,6 @@
 <script>
+	import { solved } from '$lib/stores/stores.svelte';
+	import { onMount } from 'svelte';
 	let { data, children } = $props();
 
 	let descOfSeries = $derived(data.puzzles?.[data.slugOfSeries].desc);
@@ -6,8 +8,11 @@
 	let allSlugs = $derived(puzzlesOfSeries.map((puzzle) => puzzle.slug));
 
 	// Series Stats
-	let solved = $state(Array(puzzlesOfSeries.length).fill(false));
-	let nSolved = $derived(solved.filter(Boolean).length);
+	onMount(() => {
+		solved[data.slugOfSeries] = Array(puzzlesOfSeries.length).fill(false);
+	});
+	// $inspect(solved['editor-basics'])
+	let nSolved = $derived(solved[data.slugOfSeries].filter(Boolean).length);
 </script>
 
 <div>

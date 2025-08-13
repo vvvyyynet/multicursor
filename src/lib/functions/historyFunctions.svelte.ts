@@ -16,7 +16,7 @@ export type TcmdLogList = {
 	state: any;
 	type: string;
 	ntimes: number;
-	cmd: TypeCustomCommands | 'initial';
+	cmd: TypeCustomCommands | 'initial' | string;
 	combo: string;
 	description: String;
 	doc: EditorState['doc'];

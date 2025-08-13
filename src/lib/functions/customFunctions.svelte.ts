@@ -24,15 +24,13 @@ export function logToHistory(
 	state: EditorState,
 	cmdLog: TcmdLog,
 	cmd: string, //TypeCustomCommands,
-	nDel: number,
-	other = {}
+	nDel: number = 0,
 ) {
 	const lastEntry = cmdLog.list[cmdLog.list.length - 1];
 	let cmdType;
 	let makeUpdate;
 	let combo;
 	let description;
-
 	switch (type) {
 		case 'init':
 			cmdType = 'init';
@@ -48,12 +46,11 @@ export function logToHistory(
 			cmdType = 'insert';
 			makeUpdate = lastEntry?.type === 'insert';
 			combo = cmd;
-			console.log(cmd, lastEntry.description.combo);
-			if (cmd === " ") cmd = "&nbsp;"
+			if (cmd === ' ') cmd = '&nbsp;';
 			description = {
-				combo: makeUpdate ? lastEntry.description.combo.slice(0,-1) + cmd + '"' : `"${cmd}"`,
-				short: makeUpdate ? lastEntry.description.short.slice(0,-1) + cmd + '"' : `insert "${cmd}"`,
-				long: makeUpdate ? lastEntry.description.long.slice(0,-1) + cmd + '"' : `insert "${cmd}"`
+				combo: makeUpdate ? lastEntry.description.combo.slice(0, -1) + cmd + '"' : `"${cmd}"`,
+				short: makeUpdate ? lastEntry.description.short.slice(0, -1) + cmd + '"' : `insert "${cmd}"`,
+				long: makeUpdate ? lastEntry.description.long.slice(0, -1) + cmd + '"' : `insert "${cmd}"`
 			};
 			break;
 		case 'delete-backward':
@@ -143,20 +140,15 @@ export function logKeyboardChanges(cmdLog: TcmdLog) {
 				update.changes.iterChanges((fromA, toA, fromB, toB, inserted) => {
 					const insertedText = inserted.sliceString(0);
 					const deletedLength = toA - fromA;
-					console.log(deletedLength);
 					if (insertedText.length > 0) {
-						console.log('cmdlog2', cmdLog);
-						logToHistory('insert', update.state, cmdLog, insertedText, 0);
+						logToHistory('insert', update.state, cmdLog, insertedText);
 					} else if (deletedLength > 0) {
 						const deleteType = tr.isUserEvent('delete.backward')
 							? ['delete-backward', 'backspace']
 							: tr.isUserEvent('delete.forward')
 								? ['delete-forward', 'del']
 								: ['delete-selection', 'delete-selection'];
-						logToHistory(deleteType[0], update.state, cmdLog, deleteType[1], deletedLength, {
-							toA: toA,
-							fromA: fromA
-						});
+						logToHistory(deleteType[0], update.state, cmdLog, deleteType[1], deletedLength);
 					}
 				});
 			}
@@ -175,7 +167,7 @@ export function createCustomKeymap(editorView: EditorView, cmdLog: TcmdLog) {
 					myBindings[command].fun(ev);
 					// log combo to history
 					if (myBindings[command].logToHistory) {
-						logToHistory('combo', editorView?.state, cmdLog, command, 0);
+						logToHistory('combo', editorView?.state, cmdLog, command);
 					}
 					return true; // prevent other actions with same keybinding to run
 				},

@@ -25,7 +25,7 @@
 					"title": "Navigation #1",
 					"subtitle": "ArrowKeys",
 					"explanation": "Use the ArrowKeys to navigate the text",
-					"valueStart": "\"title\": \"Navigation #1\",\n\"subtitle\": \"ArrowKeys\",\n\"explanation\": \"Use the ArrowKeys to navigate the text\",",
+					"valueStart": "aaaaaaaaaaaaaaaa,\naaaaaaaaaaaaaaaa,\naaaaaaaaaaaaaaaa,\naaaaaaaaaaaaaaaa,\naaaaaaaaaaaaaaaa,\naaaaaaaaaaaaaaaa,\naaaaaaaaaaaaaaaa,",
 					"valueSolution": "Bar"
 				},
 				{
@@ -34,16 +34,16 @@
 					"title": "Navigation #1",
 					"subtitle": "Mod + ArrowKeys",
 					"explanation": "Use the ArrowKeys while holding Ctrl/Cmd to jump word by word. Note the different behavior between `foo-bar` and `foo_bar`",
-					"valueStart": "\"title\": \"Navigation #1\",\n\"subtitle\": \"ArrowKeys\",\n\"explanation\": \"Use the ArrowKeys to navigate the text\",",
+					"valueStart": "bbbbbbbbbbbbbbb,\nbbbbbbbbbbbbbbb,\nbbbbbbbbbbbbbbb,\nbbbbbbbbbbbbbbb,\nbbbbbbbbbbbbbbb,\nbbbbbbbbbbbbbbb,\nbbbbbbbbbbbbbbb,",
 					"valueSolution": "Bar"
 				},
 				{
-					"type": "todo",
+					"type": "change",
 					"slug": "3",
 					"title": "Navigation #1",
 					"subtitle": "Shift + ArrowKeys",
 					"explanation": "Use the ArrowKeys while holding Shift to select the text",
-					"valueStart": "\"title\": \"Navigation #1\",\n\"subtitle\": \"ArrowKeys\",\n\"explanation\": \"Use the ArrowKeys to navigate the text\",",
+					"valueStart": "ccccccccccccccc,\nccccccccccccccc,\nccccccccccccccc,\nccccccccccccccc,\nccccccccccccccc,\nccccccccccccccc,\nccccccccccccccc,",
 					"valueSolution": "Bar"
 				},
 				{

@@ -7,7 +7,7 @@
 	const menuNormalClass = 'text-surface-800-200';
 	const menuActiveClass = '!text-white-500 text-lg font-bold';
 
-	const slugs = [
+	const parts = [
 		{ slug: 'about', name: 'About' },
 		{ slug: 'learn', name: 'Learn' },
 		{ slug: 'puzzles', name: 'Puzzles' },
@@ -15,7 +15,7 @@
 		{ slug: 'contribute', name: 'Contribute' }
 	];
 	const testPage = (slug) => {
-		return page.url.pathname.includes(slug);
+		return `${page.url.pathname}/`.includes(`/${slug}/`);
 	};
 </script>
 
@@ -26,10 +26,10 @@
 <!-- </div> -->
 <nav class="m-2 mx-6 border-3 bg-surface-50-950 p-4">
 	<ul class="flex justify-start gap-8">
-		{#each slugs as slug}
+		{#each parts as part}
 			<li>
-				<a class={[menuNormalClass, testPage(slug.slug) && menuActiveClass]} href={`/${slug.slug}`}
-					>{slug.name}</a
+				<a class={[menuNormalClass, testPage(part.slug) && menuActiveClass]} href={`/${part.slug}`}
+					>{part.name}</a
 				>
 			</li>
 		{/each}

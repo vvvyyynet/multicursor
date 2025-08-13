@@ -6,6 +6,7 @@
 	import { editorSettings } from '$lib/stores/stores.svelte';
 	import PuzzleHistory from './PuzzleHistory.svelte';
 	import PuzzleTimer from './PuzzleTimer.svelte';
+	import { logToHistory } from '$lib/functions/customFunctions.svelte';
 
 	let {
 		puzzleType = undefined,
@@ -25,14 +26,17 @@
 		editorView.focus();
 
 		// Reset log cmdLog
-		while (cmdLog.list.length > 1) {
+		while (cmdLog.list.length > 0) {
 			cmdLog.list.pop();
 		}
 
 		// Reset counters
-		time = 0;
+		// time = 0;
 		cmdCount = 0;
 		cmdCountAll = 0;
+
+		// Reset history
+		logToHistory('init', editorView.state, cmdLog, 'init');
 	}
 
 	let cmdLog: TcmdLog = $state({ list: [], length: 0, currentIndex: 0 });
@@ -60,7 +64,8 @@
 
 	let isSolved = false;
 	$effect(() => {
-		isSolved = value == valSolution;
+		isSolved = value === valSolution;
+		console.log('SOOOLVED');
 		setSolved(isSolved);
 	});
 </script>
@@ -91,6 +96,7 @@
 			{CmdCmbChips}
 			bind:cmdLog
 			classes="bg-surface-950-50 text-surface-50-950"
+			{resetToStart}
 		/>
 	</div>
 </div>
@@ -100,5 +106,8 @@
 	<p class="font-bold">Input as a string:</p>
 	<pre class="">{@html JSON.stringify(value).slice(1, -1)}</pre>
 </div> -->
-<PuzzleHistory {cmdLog} bind:editorView />
-<PuzzleTimer {cmdLog} bind:editorView bind:isSolved {cmdCountAll} {cmdCount} {resetToStart} />
+
+{#if puzzleType === 'change'}
+	<PuzzleHistory {cmdLog} bind:editorView />
+	<PuzzleTimer {cmdLog} bind:editorView bind:isSolved {cmdCountAll} {cmdCount} {resetToStart} />
+{/if}

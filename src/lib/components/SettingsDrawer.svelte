@@ -33,7 +33,7 @@
 		</header>
 		<article>
 			<SettingsKeymap />
-			<SettingsOther bind:CmdCmbChips />
+			<!-- <SettingsOther bind:CmdCmbChips /> -->
 		</article>
 	{/snippet}
 </Modal>

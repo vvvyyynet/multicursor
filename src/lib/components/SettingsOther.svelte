@@ -8,9 +8,9 @@
 	let valueAccordion = $state();
 	let radioGroupCmdCmbChips = $state(0);
 
-	$effect(() => {
-		CmdCmbChips = CmdCmbChipsOptions[radioGroupCmdCmbChips][1];
-	});
+	// $effect(() => {
+	// 	CmdCmbChips = CmdCmbChipsOptions[radioGroupCmdCmbChips][1];
+	// });
 </script>
 
 <Accordion value={valueAccordion} onValueChange={(e) => (valueAccordion = e.value)} collapsible>
