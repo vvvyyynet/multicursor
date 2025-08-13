@@ -7,3 +7,8 @@
 @plugin '@tailwindcss/typography';
 
 @source '../node_modules/@skeletonlabs/skeleton-svelte/dist';
+
+.codemirror-wrapper {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}

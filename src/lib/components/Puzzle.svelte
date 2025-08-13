@@ -58,8 +58,8 @@
 	});
 
 	// Extend valueSolution and valueStart
-	let valStart = $derived(valueStart + '\n\n\n\n');
-	let valSolution = $derived(valueSolution + '\n\n\n\n');
+	let valStart = $derived(valueStart);
+	let valSolution = $derived(valueSolution);
 
 	let value = $state(''); //! IMPORTANT: This will be set to valueStart ONLY INSIDE the Editor component (needed for onMount-hack)
 	let editorView: EditorView = $state();
@@ -68,6 +68,8 @@
 	$effect(() => {
 		setSolved(isSolved);
 	});
+
+	let hasTwoCols = $derived(puzzleType === 'change');
 </script>
 
 <!-- Puzzle -->
@@ -75,9 +77,9 @@
 <h1 class="h1">{subtitle}</h1>
 <p class="mt-4">{explanation}</p>
 
-<div class="mt-10 flex w-full items-start justify-start gap-10">
-	{#if puzzleType === 'change'}
-		<div class="h-full w-full">
+<div class="mt-10 grid w-full grid-cols-3 items-start justify-start gap-10">
+	{#if hasTwoCols}
+		<div class="col-span-1 h-full w-full">
 			<p class="">Target:</p>
 			<EditorSolution
 				valueSolution={valSolution}
@@ -85,7 +87,7 @@
 			/>
 		</div>
 	{/if}
-	<div class="h-full w-full">
+	<div class={[' h-full w-full', hasTwoCols ? 'col-span-2' : 'col-span-3']}>
 		<p class="">Edit here:</p>
 		<Editor
 			editorSettings
