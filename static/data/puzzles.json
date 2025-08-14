@@ -26,7 +26,8 @@
 					"subtitle": "ArrowKeys",
 					"explanation": "Use the ArrowKeys to navigate the text",
 					"valueStart": "aaaaaaaaaaaaaaaa,\naaaaaaaaaaaaaaaa,\naaaaaaaaaaaaaaaa,\naaaaaaaaaaaaaaaa,\naaaaaaaaaaaaaaaa,\naaaaaaaaaaaaaaaa,\naaaaaaaaaaaaaaaa,",
-					"valueSolution": "Bar"
+					"valueSolution": "",
+					"todoList": ["ArrowDown", "ArrowUp", "ArrowLeft", "ArrowRight"]
 				},
 				{
 					"type": "todo",
@@ -35,7 +36,8 @@
 					"subtitle": "Mod + ArrowKeys",
 					"explanation": "Use the ArrowKeys while holding Ctrl/Cmd to jump word by word. Note the different behavior between `foo-bar` and `foo_bar`",
 					"valueStart": "bbbbbbbbbbbbbbb,\nbbbbbbbbbbbbbbb,\nbbbbbbbbbbbbbbb,\nbbbbbbbbbbbbbbb,\nbbbbbbbbbbbbbbb,\nbbbbbbbbbbbbbbb,\nbbbbbbbbbbbbbbb,",
-					"valueSolution": "Bar"
+					"valueSolution": "",
+					"todoList": []
 				},
 				{
 					"type": "change",
@@ -44,7 +46,8 @@
 					"subtitle": "Shift + ArrowKeys",
 					"explanation": "Use the ArrowKeys while holding Shift to select the text",
 					"valueStart": "ccccccccccccccc,\nccccccccccccccc,\nccccccccccccccc,\nccccccccccccccc,\nccccccccccccccc,\nccccccccccccccc,\nccccccccccccccc,",
-					"valueSolution": "Bar"
+					"valueSolution": "",
+					"todoList": []
 				},
 				{
 					"type": "change",
@@ -53,7 +56,8 @@
 					"subtitle": "Foo bar 2",
 					"explanation": "This one is very easy!",
 					"valueStart": "Foo Foo",
-					"valueSolution": "Bar Bar"
+					"valueSolution": "Bar Bar",
+					"todoList": []
 				}
 			]
 		},
@@ -75,7 +79,8 @@
 					"subtitle": "Foo bar",
 					"explanation": "This one is very easy!",
 					"valueStart": "Foo",
-					"valueSolution": "Bar"
+					"valueSolution": "",
+					"todoList": []
 				}
 			]
 		},
@@ -97,7 +102,8 @@
 					"subtitle": "Foo bar",
 					"explanation": "This one is very easy!",
 					"valueStart": "Foo",
-					"valueSolution": "Bar"
+					"valueSolution": "",
+					"todoList": []
 				}
 			]
 		},
@@ -119,7 +125,8 @@
 					"subtitle": "Foo bar",
 					"explanation": "This one is very easy!",
 					"valueStart": "Foo",
-					"valueSolution": "Bar"
+					"valueSolution": "",
+					"todoList": []
 				}
 			]
 		},
@@ -141,7 +148,8 @@
 					"subtitle": "Foo bar",
 					"explanation": "This one is very easy!",
 					"valueStart": "Foo",
-					"valueSolution": "Bar"
+					"valueSolution": "",
+					"todoList": []
 				}
 			]
 		},
@@ -164,6 +172,7 @@
 					"explanation": "",
 					"valueStart": "idCollector.all.push(layerId_polygonContourGlow);",
 					"valueSolution": "pushToPath(idCollector, 'all', layerId_polygonContourGlow);\npushToPath(idCollector, 'types.polygons.all', layerId_polygonContourGlow);\npushToPath(idCollector, 'types.polygons.contours.all', layerId_polygonContourGlow);\npushToPath(idCollector, 'types.polygons.contours.glows', layerId_polygonContourGlow);\npushToPath(idCollector, 'shapes.special.lineGlows', layerId_polygonContourGlow);",
+					"todoList": [],
 					"hint": "**Fastest Solution:** duplicate template-line down (5x), multicursor-select all `push` with Ctrl+D, 2x(Left), Ctrl+Shift+Home, 2x(Ctrl+Shift+Right), Ctrl+X, move in multicursormode to `'all'`, Ctrl+D to highlight, Ctrl+V"
 				}
 			]

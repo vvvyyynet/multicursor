@@ -24,7 +24,8 @@
 			subtitle: 'This puzzle does not exist',
 			explanation: '',
 			valueStart: '',
-			valueSolution: ''
+			valueSolution: '',
+			todoList: []
 		}
 	);
 </script>
@@ -38,6 +39,7 @@
 		explanation={puzzle.explanation}
 		valueStart={puzzle.valueStart}
 		valueSolution={puzzle.valueSolution}
+		todoList={puzzle.todoList}
 		{CmdCmbChips}
 		{setSolved}
 	/>

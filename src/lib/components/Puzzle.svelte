@@ -5,6 +5,7 @@
 	import { type TcmdLog } from '$lib/functions/historyFunctions.svelte';
 	import { editorSettings } from '$lib/stores/stores.svelte';
 	import PuzzleHistory from './PuzzleHistory.svelte';
+	import PuzzleTodolist from './PuzzleTodolist.svelte';
 	import PuzzleTimer from './PuzzleTimer.svelte';
 	import { logToHistory } from '$lib/functions/customFunctions.svelte';
 
@@ -15,6 +16,7 @@
 		explanation = '',
 		valueStart = '',
 		valueSolution = '_',
+		todoList = [],
 		CmdCmbChips = '',
 		setSolved = () => {}
 	} = $props();
@@ -64,9 +66,31 @@
 	let value = $state(''); //! IMPORTANT: This will be set to valueStart ONLY INSIDE the Editor component (needed for onMount-hack)
 	let editorView: EditorView = $state();
 
-	let isSolved = $derived(value === valSolution);
+	let isSolved = $state(false);
+
 	$effect(() => {
-		setSolved(isSolved);
+		cmdLog;
+		if (puzzleType === 'change') {
+			if (value === valSolution) {
+				isSolved = true;
+				setSolved(isSolved);
+			} else {
+				isSolved = false;
+			}
+		} else if (puzzleType === 'todo') {
+			if (
+				todoList.every((todo) => {
+					return cmdLog.list.some((item) => {
+						return item.description.combo === todo;
+					});
+				})
+			) {
+				isSolved = true;
+				setSolved(isSolved);
+			} else {
+				isSolved = false;
+			}
+		}
 	});
 
 	let hasTwoCols = $derived(puzzleType === 'change');
@@ -76,6 +100,10 @@
 <h2 class="h4">{title}</h2>
 <h1 class="h1">{subtitle}</h1>
 <p class="mt-4">{explanation}</p>
+
+{#if puzzleType === 'todo'}
+	<PuzzleTodolist {cmdLog} {todoList} {resetToStart} isSolved bind:editorView />
+{/if}
 
 <div class="mt-10 grid w-full grid-cols-3 items-start justify-start gap-10">
 	{#if hasTwoCols}
@@ -97,6 +125,7 @@
 			valueSolution={valSolution}
 			{CmdCmbChips}
 			bind:cmdLog
+			{isSolved}
 			classes="bg-surface-950-50 text-surface-50-950"
 			{resetToStart}
 		/>

@@ -39,6 +39,7 @@
 		CmdCmbChips,
 		cmdLog = $bindable(cmdLogEmpty),
 		classes = '',
+		isSolved = false,
 		resetToStart = () => {}
 	} = $props();
 	let isCaseSensitive = $state(false);
@@ -131,12 +132,12 @@
 				// keymap.of([...defaultKeymap, ...historyKeymap]),
 				Prec.high(keymap.of(resetKeymap)),
 				Prec.highest(keymap.of(customKeymap)),
-				...(value === valueSolution ? [greenBackgroundTheme] : [])
+				...(isSolved ? [greenBackgroundTheme] : [])
 			]}
 		/>
 	</div>
 
-	{#if value === valueSolution}
+	{#if isSolved}
 		<div class="ml-[50vw]">
 			<Confetti size="12" x={[-6, 6]} y={[-6, 6]} amount="150" fallDistance="100px" />
 		</div>
