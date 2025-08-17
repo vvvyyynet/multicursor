@@ -5,7 +5,10 @@
 {#snippet card({ slug, title1, title2, text, footer1, footer2, imgSrc })}
 	<a
 		href={`/puzzles/${slug}`}
-		class="block max-w-md divide-y divide-surface-200-800 overflow-hidden card border-[1px] border-surface-200-800 preset-filled-surface-100-900 card-hover"
+		class={[
+			'block max-w-md divide-y divide-surface-200-800 overflow-hidden card border-[1px] border-surface-200-800 preset-filled-surface-100-900 card-hover',
+			slug !== 'editor-basics' && 'pointer-events-none cursor-not-allowed text-gray-500 opacity-50'
+		]}
 	>
 		<header>
 			<img src={imgSrc} class="aspect-[21/9] w-full" alt="banner" />

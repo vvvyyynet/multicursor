@@ -21,39 +21,113 @@
 			},
 			"puzzles": [
 				{
-					"type": "todo",
-					"slug": "1",
-					"title": "Navigation #1",
-					"subtitle": "ArrowKeys",
-					"explanation": "Use the ArrowKeys to navigate the text",
-					"valueStart": "aaaaaaaaaaaaaaaa,\naaaaaaaaaaaaaaaa,\naaaaaaaaaaaaaaaa,\naaaaaaaaaaaaaaaa,\naaaaaaaaaaaaaaaa,\naaaaaaaaaaaaaaaa,\naaaaaaaaaaaaaaaa,",
-					"valueSolution": "",
-					"todoList": ["ArrowDown", "ArrowUp", "ArrowLeft", "ArrowRight"]
+					"type": "expl",
+					"slug": "arrowkeys-expl",
+					"img": "",
+					"part": "Part 1",
+					"titleBreadcrumb": "Navigation with Arrows",
+					"title": "Let's start very simple!",
+					"explanation": "Observe the behavior of the cursor the arrow keys."
 				},
 				{
 					"type": "todo",
-					"slug": "2",
-					"title": "Navigation #1",
-					"subtitle": "Mod + ArrowKeys",
-					"explanation": "Use the ArrowKeys while holding Ctrl/Cmd to jump word by word. Note the different behavior between `foo-bar` and `foo_bar`",
-					"valueStart": "bbbbbbbbbbbbbbb,\nbbbbbbbbbbbbbbb,\nbbbbbbbbbbbbbbb,\nbbbbbbbbbbbbbbb,\nbbbbbbbbbbbbbbb,\nbbbbbbbbbbbbbbb,\nbbbbbbbbbbbbbbb,",
-					"valueSolution": "",
-					"todoList": ["Ctrl-ArrowDown", "Ctrl-ArrowUp", "Ctrl-ArrowLeft", "Ctrl-ArrowRight", "Home", "End"]
+					"slug": "arrowkeys-todo",
+					"img": "",
+					"part": "Part 1",
+					"titleBreadcrumb": "Navigation with Arrows",
+					"title": "left, up, right, down",
+					"explanation": "Use the ArrowKeys to navigate the text",
+					"valueStart": "Un labyrinthe (λαϐύρινθος / labúrinthos en grec ancien, labyrinthus en latin) est un tracé sinueux, muni ou non d'embranchements, d'impasses et de fausses pistes, destiné à égarer ou à ralentir celui qui cherche à s'y déplacer. Ce motif, apparu dès la Préhistoire, se retrouve dans de nombreuses civilisations sous des formes diverses.\n\nLe mot désigne dans la mythologie grecque une série de galeries construites par l'architecte Dédale pour enfermer le Minotaure. En latin, le labyrinthus est un espace clos dont il est difficile de trouver l’issue.",
+					"todoList": ["ArrowDown", "ArrowUp", "ArrowLeft", "ArrowRight"]
+				},
+				{
+					"type": "expl",
+					"slug": "mod-arrowkeys-expl",
+					"img": "",
+					"part": "Part 2",
+					"titleBreadcrumb": "Navigation with Ctrl+Arrows",
+					"title": "Now, let's jump!",
+					"explanation": "Use the ArrowKeys **while holding Ctrl/Cmd** to jump word by word. Note the different behavior between `foo-bar` and `foo_bar`"
+				},
+				{
+					"type": "todo",
+					"slug": "mod-arrowkeys-todo",
+					"img": "",
+					"part": "Part 2",
+					"titleBreadcrumb": "Navigation with Ctrl+Arrows",
+					"title": "Ctr. + top/right/left/down",
+					"explanation": "Use the ArrowKeys while holding Ctrl/Cmd to jump word by word. Note the different behavior between `foo-bar` and `foo_bar`.",
+					"valueStart": "Un labyrinthe (λαϐύρινθος / labúrinthos en grec ancien, labyrinthus en latin) est un tracé sinueux, muni ou non d'embranchements, d'impasses et de fausses pistes, destiné à égarer ou à ralentir celui qui cherche à s'y déplacer. Ce motif, apparu dès la Préhistoire, se retrouve dans de nombreuses civilisations sous des formes diverses.\n\nLe mot désigne dans la mythologie grecque une série de galeries construites par l'architecte Dédale pour enfermer le Minotaure. En latin, le labyrinthus est un espace clos dont il est difficile de trouver l’issue.",
+					"todoList": [
+						"Ctrl-ArrowDown",
+						"Ctrl-ArrowUp",
+						"Ctrl-ArrowLeft",
+						"Ctrl-ArrowRight",
+						"Home",
+						"End"
+					]
+				},
+				{
+					"type": "expl",
+					"slug": "shift-arrowkeys-expl",
+					"img": "",
+					"part": "Part 3",
+					"titleBreadcrumb": "Selection with Shift+Arrows",
+					"title": "Text Selection",
+					"explanation": "If you hold Shift while using the Arrow Keys you can select text character-by-character."
 				},
 				{
 					"type": "todo",
 					"slug": "3",
-					"title": "Navigation #1",
-					"subtitle": "Shift + ArrowKeys",
+					"img": "",
+					"part": "Part 3",
+					"titleBreadcrumb": "Selecting characters",
+					"title": "Selecting characters",
 					"explanation": "Use the ArrowKeys while holding Shift to select the text",
-					"valueStart": "ccccccccccccccc,\nccccccccccccccc,\nccccccccccccccc,\nccccccccccccccc,\nccccccccccccccc,\nccccccccccccccc,\nccccccccccccccc,",
-					"valueSolution": "",
+					"valueStart": "Un labyrinthe (λαϐύρινθος / labúrinthos en grec ancien, labyrinthus en latin) est un tracé sinueux, muni ou non d'embranchements, d'impasses et de fausses pistes, destiné à égarer ou à ralentir celui qui cherche à s'y déplacer. Ce motif, apparu dès la Préhistoire, se retrouve dans de nombreuses civilisations sous des formes diverses.\n\nLe mot désigne dans la mythologie grecque une série de galeries construites par l'architecte Dédale pour enfermer le Minotaure. En latin, le labyrinthus est un espace clos dont il est difficile de trouver l’issue.",
 					"todoList": ["Shift-ArrowDown", "Shift-ArrowUp", "Shift-ArrowLeft", "Shift-ArrowRight"]
+				},
+				{
+					"type": "todo",
+					"slug": "3b",
+					"img": "",
+					"part": "Part 3",
+					"titleBreadcrumb": "Selecting words",
+					"title": "Selecting words",
+					"explanation": "Use the ArrowKeys while holding Shift and Ctrl to select the text word-by-word",
+					"protipp": "Note, the word-alignment when unselecting. This can be very useful if you want to deliberately include or not include whitespaces (depending on the direction you select from).",
+					"valueStart": "Un labyrinthe (λαϐύρινθος / labúrinthos en grec ancien, labyrinthus en latin) est un tracé sinueux, muni ou non d'embranchements, d'impasses et de fausses pistes, destiné à égarer ou à ralentir celui qui cherche à s'y déplacer. Ce motif, apparu dès la Préhistoire, se retrouve dans de nombreuses civilisations sous des formes diverses.\n\nLe mot désigne dans la mythologie grecque une série de galeries construites par l'architecte Dédale pour enfermer le Minotaure. En latin, le labyrinthus est un espace clos dont il est difficile de trouver l’issue.",
+					"todoList": ["Shift-Ctrl-ArrowLeft", "Shift-Ctrl-ArrowRight"]
+				},
+				{
+					"type": "todo",
+					"slug": "3c",
+					"img": "",
+					"part": "Part 3",
+					"titleBreadcrumb": "Selecting lines",
+					"title": "Selecting lines",
+					"explanation": "Use the ArrowKeys while holding Shift to select the text",
+					"valueStart": "Un labyrinthe (λαϐύρινθος / labúrinthos en grec ancien, labyrinthus en latin) est un tracé sinueux, muni ou non d'embranchements, d'impasses et de fausses pistes, destiné à égarer ou à ralentir celui qui cherche à s'y déplacer. Ce motif, apparu dès la Préhistoire, se retrouve dans de nombreuses civilisations sous des formes diverses.\n\nLe mot désigne dans la mythologie grecque une série de galeries construites par l'architecte Dédale pour enfermer le Minotaure. En latin, le labyrinthus est un espace clos dont il est difficile de trouver l’issue.",
+					"todoList": ["Shift-Ctrl-Home", "Shift-Ctrl-End"]
+				},
+				{
+					"type": "todo",
+					"slug": "3d",
+					"img": "",
+					"part": "Part 3",
+					"titleBreadcrumb": "Selecting paragraphs",
+					"title": "Selecting paragraphs",
+					"explanation": "Use the ArrowKeys while holding Shift to select the text",
+					"valueStart": "Un labyrinthe (λαϐύρινθος / labúrinthos en grec ancien, labyrinthus en latin) est un tracé sinueux, muni ou non d'embranchements, d'impasses et de fausses pistes, destiné à égarer ou à ralentir celui qui cherche à s'y déplacer. Ce motif, apparu dès la Préhistoire, se retrouve dans de nombreuses civilisations sous des formes diverses.\n\nLe mot désigne dans la mythologie grecque une série de galeries construites par l'architecte Dédale pour enfermer le Minotaure. En latin, le labyrinthus est un espace clos dont il est difficile de trouver l’issue.",
+					"todoList": ["Shift-Ctrl-Up", "Shift-Ctrl-Down"]
 				},
 				{
 					"type": "change",
 					"slug": "4",
-					"title": "#3",
+					"img": "",
+					"part": "Part 4",
+					"titleBreadcrumb": "Replace Foo with Bar",
+					"title": "Replace Foo with Bar",
 					"subtitle": "Foo bar 2",
 					"explanation": "This one is very easy!",
 					"valueStart": "Foo Foo",
@@ -77,6 +151,8 @@
 				{
 					"type": "change",
 					"slug": "1",
+					"img": "",
+					"titleBreadcrumb": "#1",
 					"title": "#1",
 					"subtitle": "Foo bar",
 					"explanation": "This one is very easy!",
@@ -101,6 +177,8 @@
 				{
 					"type": "change",
 					"slug": "1",
+					"img": "",
+					"titleBreadcrumb": "#1",
 					"title": "#1",
 					"subtitle": "Foo bar",
 					"explanation": "This one is very easy!",
@@ -125,6 +203,8 @@
 				{
 					"type": "change",
 					"slug": "1",
+					"img": "",
+					"titleBreadcrumb": "#1",
 					"title": "#1",
 					"subtitle": "Foo bar",
 					"explanation": "This one is very easy!",
@@ -149,6 +229,8 @@
 				{
 					"type": "change",
 					"slug": "1",
+					"img": "",
+					"titleBreadcrumb": "#1",
 					"title": "#1",
 					"subtitle": "Foo bar",
 					"explanation": "This one is very easy!",
@@ -173,6 +255,8 @@
 				{
 					"type": "change",
 					"slug": "1",
+					"img": "",
+					"titleBreadcrumb": "Push to Path",
 					"title": "Push to Path",
 					"subtitle": "medium",
 					"explanation": "",

@@ -3,25 +3,27 @@
 	import EditorSolution from '$lib/components/EditorSolution.svelte';
 	import { EditorView } from '@codemirror/view';
 	import { type TcmdLog } from '$lib/functions/historyFunctions.svelte';
-	import { editorSettings } from '$lib/stores/stores.svelte';
 	import PuzzleHistory from './PuzzleHistory.svelte';
 	import PuzzleTodolist from './PuzzleTodolist.svelte';
-	import PuzzleTimer from './PuzzleTimer.svelte';
+	import PuzzleTimerStats from './PuzzleTimerStats.svelte';
 	import { logToHistory } from '$lib/functions/customFunctions.svelte';
 	import { fade, fly } from 'svelte/transition';
+	import { ArrowLeft, ArrowRight } from '@lucide/svelte';
 
 	let {
 		classes = '',
 		puzzleType = undefined,
+		part = '',
 		title = '',
-		subtitle = '',
 		explanation = '',
+		protipp = '',
 		valueStart = '',
 		valueSolution = '_',
 		todoList = [],
 		CmdCmbChips = '',
 		setSolved = () => {},
-		direction
+		direction,
+		navigateForward
 	} = $props();
 
 	let time = $state({ val: 0 }); // units: 1/10 sec
@@ -99,71 +101,221 @@
 	let hasTwoCols = $derived(puzzleType === 'change');
 </script>
 
-<div class={['grid grid-cols-[1fr_3fr] gap-5', classes]}>
-	<!-- Explainer -->
-	<div class="border-r-2 border-white p-2">
-		<h2 class="h4">{title}</h2>
-		<h1 class="h2">{subtitle}</h1>
-		<p class="mt-4">{explanation}</p>
+<div class={['relative m-0 w-full  p-0', classes]}>
+	<div class={['absolute top-0 left-0 mx-10 min-h-[50vh] w-full bg-amber-100 p-2', classes]}>
+		<!-- Explantions -->
+		{#if puzzleType === 'expl'}
+			<div
+				class={['absolute left-1/4 w-1/2 p-2']}
+				in:fly={{ y: 100 * direction, duration: 300 }}
+				out:fly={{ y: -100 * direction, duration: 300 }}
+			>
+				<div class="z-90 border-2 border-surface-950-50 bg-surface-50-950 p-2">
+					<h1 class="h2">{title}</h1>
+					<h2 class="h6">{part}</h2>
+					<p class="prose mt-4 text-xl">{explanation}</p>
+				</div>
+				<!-- NextButton -->
+				<button
+					in:fade={{ duration: 300, delay: 200 }}
+					class="mt-15 rounded-2xl border bg-secondary-100-900 px-10 py-2 text-3xl text-surface-950-50"
+					onclick={navigateForward}
+					><ArrowRight class="mr-2 inline-block" />
+					<span>Start</span></button
+				>
+			</div>
+		{:else if puzzleType === 'todo'}
+			<!--
+	
+		=====================
+		Todo-Puzzle
+		=====================
+	
+	
+	
+	
+	
+	
+		-->
+			<!-- Title -->
+			<div
+				class={[
+					'absolute -top-5 -left-10 z-90 grid-cols-[1fr_3fr] gap-5 border-2 border-surface-950-50 bg-surface-50-950 p-2 text-lg'
+				]}
+				in:fly={{ y: 100 * direction, duration: 300 }}
+				out:fly={{ y: -100 * direction, duration: 300 }}
+			>
+				<!-- Explanation -->
+				<h1 class="h2">{title}</h1>
+				<h2 class="h6">{part}</h2>
+				<p class="prose mt-4">{explanation}</p>
+				{#if protipp}
+					<p class="prose mt-4"><span class="font-bold">Pro-Tipp:</span> {protipp}</p>
+				{/if}
+				<!-- Reset Button -->
+				<button
+					class="m-5 btn rounded-lg bg-amber-200 btn-sm px-2 text-black"
+					onclick={() => {
+						resetToStart(cmdLog);
+					}}>Restart Puzzle</button
+				>
+			</div>
 
-		<!-- Reset Button -->
-		<button
-			class="m-5 btn rounded-lg bg-amber-200 btn-sm px-2 text-black"
-			onclick={() => {
-				resetToStart(cmdLog);
-			}}>Restart Puzzle</button
-		>
+			<!-- Todolist -->
+			<div
+				class="absolute top-1/2 -left-20 z-90 border-2 border-surface-950-50 bg-surface-50-950 p-2"
+				in:fly={{ x: -200, delay: 1700, duration: 300 }}
+				out:fade={{ delay: 0, duration: 300 }}
+			>
+				<p class="font-bold">Todolist:</p>
+				<PuzzleTodolist {cmdLog} {todoList} bind:editorView />
+			</div>
 
-		<!-- Todolist -->
-		{#if puzzleType === 'todo'}
-			<PuzzleTodolist {cmdLog} {todoList} bind:editorView />
-		{/if}
-
-		<!-- Target -->
-		{#if puzzleType === 'change'}
-			<div class="h-full w-full">
-				<p class="">Target:</p>
-				<EditorSolution
+			<!-- Editor -->
+			<div
+				class="absolute top-40 left-60 z-90 border-2 border-surface-950-50 bg-surface-50-950 p-2"
+				in:fade={{ delay: 1700, duration: 300 }}
+				out:fade={{ delay: 0, duration: 300 }}
+			>
+				<!-- Editor -->
+				<p class="">Edit here:</p>
+				<Editor
+					editorSettings
+					bind:editorView
+					bind:value
+					valueStart={valStart}
 					valueSolution={valSolution}
-					classes="bg-surface-950-50 opacity-75 text-surface-50-950 my-2"
+					{CmdCmbChips}
+					bind:cmdLog
+					{isSolved}
+					classes="bg-surface-50 text-surface-800"
+					{resetToStart}
 				/>
+			</div>
+
+			<!-- On Solved -->
+			{#if isSolved}
+				<div class="absolute bottom-0 left-0 flex w-full flex-col items-center justify-center">
+					<!-- Buttons -->
+					<button
+						class="mt-15 rounded-2xl border bg-secondary-100-900 px-10 py-2 text-3xl text-surface-950-50"
+						onclick={navigateForward}
+					>
+						<ArrowRight class="mr-2 inline-block" />
+						<span>Next Puzzle</span></button
+					>
+
+					<button
+						class="mt-4 btn rounded-lg bg-amber-200 btn-sm px-2 text-black"
+						onclick={() => {
+							resetToStart(cmdLog);
+						}}
+					>
+						<span>Solve agin</span></button
+					>
+				</div>
+			{/if}
+		{:else if puzzleType === 'change'}
+			<!--
+	
+		=====================
+		Change-Puzzle
+		=====================
+	
+	
+	
+	
+	
+	
+		-->
+			<div
+				class={['grid grid-cols-[1fr_3fr] gap-5']}
+				in:fly={{ y: 100 * direction, duration: 300 }}
+				out:fly={{ y: -100 * direction, duration: 300 }}
+			>
+				<!-- Left Column -->
+				<div>
+					<!-- Explanation -->
+					<div class="border-r-2 border-white p-2">
+						<h1 class="h2">{title}</h1>
+						<h2 class="h6">{part}</h2>
+						<p class="prose mt-4 text-xl">{explanation}</p>
+					</div>
+					<!-- Reset Button -->
+					<button
+						class="m-5 btn rounded-lg bg-amber-200 btn-sm px-2 text-black"
+						onclick={() => {
+							resetToStart(cmdLog);
+						}}>Restart Puzzle</button
+					>
+
+					<!-- Target -->
+					<div class="h-full w-full">
+						<p class="">Target:</p>
+						<EditorSolution
+							valueSolution={valSolution}
+							classes="bg-surface-100 border-2 opacity-75 text-surface-800 my-2"
+						/>
+					</div>
+				</div>
+
+				<!-- Right Column -->
+				<div
+					class="p-2"
+					in:fade={{ delay: 1700, duration: 300 }}
+					out:fade={{ delay: 0, duration: 300 }}
+				>
+					<!-- Editor -->
+					<p class="">Edit here:</p>
+					<Editor
+						editorSettings
+						bind:editorView
+						bind:value
+						valueStart={valStart}
+						valueSolution={valSolution}
+						{CmdCmbChips}
+						bind:cmdLog
+						{isSolved}
+						classes="bg-surface-100 border-2 border-black text-surface-800"
+						{resetToStart}
+					/>
+					<!-- History -->
+					<PuzzleHistory {cmdLog} bind:editorView />
+				</div>
+
+				<!-- On Solved -->
+				{#if isSolved}
+					<div class="flex w-full flex-col items-center justify-center">
+						<!-- Stats and Timer -->
+						<PuzzleTimerStats
+							{cmdLog}
+							bind:editorView
+							{isSolved}
+							{cmdCountAll}
+							bind:time={time.val}
+							classes="my-5 mt-20 flex flex-col items-center justify-center gap-3"
+						/>
+
+						<!-- Buttons -->
+						<button
+							class="mt-15 rounded-2xl border bg-secondary-100-900 px-10 py-2 text-3xl text-surface-950-50"
+							onclick={navigateForward}
+						>
+							<ArrowRight class="mr-2 inline-block" />
+							<span>Next Puzzle</span></button
+						>
+
+						<button
+							class="mt-4 btn rounded-lg bg-amber-200 btn-sm px-2 text-black"
+							onclick={() => {
+								resetToStart(cmdLog);
+							}}
+						>
+							<span>Solve agin</span></button
+						>
+					</div>
+				{/if}
 			</div>
 		{/if}
 	</div>
-
-	<!-- Puzzle -->
-	<div class="p-2" in:fade={{ delay: 700, duration: 300 }} out:fade={{ delay: 0, duration: 300 }}>
-		<p class="">Edit here:</p>
-		<Editor
-			editorSettings
-			bind:editorView
-			bind:value
-			valueStart={valStart}
-			valueSolution={valSolution}
-			{CmdCmbChips}
-			bind:cmdLog
-			{isSolved}
-			classes="bg-surface-950-50 text-surface-50-950"
-			{resetToStart}
-		/>
-	</div>
 </div>
-
-<!-- Display value with all whitespaces and \n -->
-<!-- <div class="mt-2 text-xs">
-	<p class="font-bold">Input as a string:</p>
-	<pre class="">{@html JSON.stringify(value).slice(1, -1)}</pre>
-</div> -->
-
-{#if puzzleType === 'change'}
-	<PuzzleHistory {cmdLog} bind:editorView />
-	<PuzzleTimer
-		{cmdLog}
-		bind:editorView
-		{isSolved}
-		{cmdCountAll}
-		{cmdCount}
-		{resetToStart}
-		bind:time={time.val}
-	/>
-{/if}

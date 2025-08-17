@@ -7,8 +7,8 @@
 	});
 </script>
 
-{#each solved as s}
+<!-- {#each solved as s}
 	<p>{s}</p>
-{/each}
+{/each} -->
 
 {@render children()}

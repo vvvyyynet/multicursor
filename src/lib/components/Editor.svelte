@@ -48,11 +48,11 @@
 	// Called when CodeMirror updates
 	let customKeymap = $derived(createCustomKeymap(editorView, cmdLog));
 
-	const greenBackgroundTheme = EditorView.theme({
-		'&': {
-			backgroundColor: 'lightgreen'
-		}
-	});
+	// const greenBackgroundTheme = EditorView.theme({
+	// 	'&': {
+	// 		backgroundColor: 'var(--color-yey)'
+	// 	}
+	// });
 
 	// Reset default keybindings (i.e. overwrite with empty functions)
 	// -- This guarantees, that default keybindings (like Mod-d) won't work alongside with custom keybindings for the same action.
@@ -88,14 +88,14 @@
 
 <div class="relative flex flex-col">
 	<!-- Editor -->
-	<div class={[classes, 'relative']}>
+	<div class={['relative', isSolved && 'border-green-300 bg-green-300', classes]}>
 		<div class="absolute top-2 right-2 z-50 flex gap-2">
 			<button
 				onclick={() => {
 					isCaseSensitive = !isCaseSensitive;
 				}}
 				class={[
-					'h-6 w-6 rounded-md border bg-surface-950-50 text-xs',
+					'h-6 w-6 rounded-md border bg-surface-50 text-xs',
 					isCaseSensitive && '!bg-blue-200'
 				]}>aA</button
 			>
@@ -103,10 +103,8 @@
 				onclick={() => {
 					isWholeWord = !isWholeWord;
 				}}
-				class={[
-					'h-6 w-6 rounded-md border bg-surface-950-50 text-xs',
-					isWholeWord && '!bg-blue-200'
-				]}>[...]</button
+				class={['h-6 w-6 rounded-md border bg-surface-50 text-xs', isWholeWord && '!bg-blue-200']}
+				>[...]</button
 			>
 		</div>
 		<CodeMirror
@@ -132,7 +130,8 @@
 				// keymap.of([...defaultKeymap, ...historyKeymap]),
 				Prec.high(keymap.of(resetKeymap)),
 				Prec.highest(keymap.of(customKeymap)),
-				...(isSolved ? [greenBackgroundTheme] : [])
+				EditorView.lineWrapping
+				// ...(isSolved ? [greenBackgroundTheme] : [])
 			]}
 		/>
 	</div>

@@ -11,4 +11,9 @@
 .codemirror-wrapper {
     padding-top: 10px;
     padding-bottom: 10px;
+    /* background-color: aqua; */
+}
+
+:root {
+    --color-yey: #9eff8f;
 }

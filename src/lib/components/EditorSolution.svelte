@@ -1,11 +1,12 @@
 <script lang="ts">
 	import CodeMirror from 'svelte-codemirror-editor';
+	import { EditorView } from '@codemirror/view';
 	import { javascript } from '@codemirror/lang-javascript';
 	let { valueSolution = 'no solution provided', classes = '' } = $props();
 </script>
 
 <div class={[classes, 'editor-solution pointer-events-none relative select-none']}>
-	<CodeMirror value={valueSolution} lang={javascript()} extensions={[]} />
+	<CodeMirror value={valueSolution} lang={javascript()} extensions={[EditorView.lineWrapping]} />
 </div>
 
 <style>

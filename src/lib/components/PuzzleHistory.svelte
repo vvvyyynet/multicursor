@@ -18,43 +18,42 @@
 	<!-- History -->
 	<Accordion.Item value="main">
 		{#snippet lead()}<History />{/snippet}
-		{#snippet control()}Show History{/snippet}
+		{#snippet control()}Show/Hide History{/snippet}
 		{#snippet panel()}
-			<form class="space-y-2">
-				<fieldset class="flex flex-row gap-5">
-					<legend>Display mode:</legend>
+			<form class="relative w-full space-y-2 pt-5">
+				<fieldset class="absolute top-0 right-0 flex flex-row gap-5">
 					<label class="flex items-center space-x-2">
 						<input
-							class="radio"
+							class="hidden"
 							type="radio"
 							id="combo"
 							name="descriptionFlavour"
 							value="combo"
 							bind:group={historyChipsMode}
 						/>
-						<p>Keystrokes</p>
+						<p class={historyChipsMode === 'combo' ? 'font-bold' : ''}>Keystrokes</p>
 					</label>
 					<label class="flex items-center space-x-2">
 						<input
-							class="radio"
+							class="hidden"
 							type="radio"
 							id="short"
 							name="descriptionFlavour"
 							value="short"
 							bind:group={historyChipsMode}
 						/>
-						<p>Short</p>
+						<p class={historyChipsMode === 'short' ? 'font-bold' : ''}>Short</p>
 					</label>
 					<label class="flex items-center space-x-2">
 						<input
-							class="radio"
+							class="hidden"
 							type="radio"
 							id="long"
 							name="descriptionFlavour"
 							value="long"
 							bind:group={historyChipsMode}
 						/>
-						<p>Long</p>
+						<p class={historyChipsMode === 'long' ? 'font-bold' : ''}>Long</p>
 					</label>
 				</fieldset>
 			</form>
@@ -67,8 +66,8 @@
 								'mr-2 flex cursor-pointer justify-center rounded-full border px-6 py-1 text-center transition',
 								i <= cmdLog.currentIndex
 									? 'bg-primary-100-900 text-surface-950-50'
-									: 'bg-primary-300-700 text-surface-900-100',
-								step.type === 'init' && ' !bg-green-600 !px-2'
+									: 'bg-primary-50-950 text-surface-900-100',
+								step.type === 'init' && ' !bg-white !px-2'
 							]}
 							onclick={(ev) => {
 								restoreHistory(editorView, cmdLog, i);
