@@ -84,7 +84,7 @@
 		onmouseleave={() => {
 			isTopHovered = false;
 		}}
-		class="group/top relative z-90 h-[20vh] w-full bg-surface-50-950 transition-all duration-500 hover:h-120"
+		class="group/top relative z-90 h-[20vh] w-full bg-surface-50-950 transition-all duration-500 hover:h-120 hover:pb-150"
 	>
 		{#if isTopHovered}
 			<a

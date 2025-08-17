@@ -57,7 +57,7 @@
 					"titleBreadcrumb": "Navigation with Ctrl+Arrows",
 					"title": "Ctr. + top/right/left/down",
 					"explanation": "Use the ArrowKeys while holding Ctrl/Cmd to jump word by word. Note the different behavior between `foo-bar` and `foo_bar`.",
-					"valueStart": "Un labyrinthe (λαϐύρινθος / labúrinthos en grec ancien, labyrinthus en latin) est un tracé sinueux, muni ou non d'embranchements, d'impasses et de fausses pistes, destiné à égarer ou à ralentir celui qui cherche à s'y déplacer. Ce motif, apparu dès la Préhistoire, se retrouve dans de nombreuses civilisations sous des formes diverses.\n\nLe mot désigne dans la mythologie grecque une série de galeries construites par l'architecte Dédale pour enfermer le Minotaure. En latin, le labyrinthus est un espace clos dont il est difficile de trouver l’issue.",
+					"valueStart": "Un labyrinthe (λαϐύρινθος / labúrinthos en grec ancien, labyrinthus en latin) est un tracé sinueux, muni ou non d'embranchements, d'impasses et de fausses pistes, destiné à égarer ou à ralentir celui qui cherche à s'y déplacer. Ce motif, apparu dès la Préhistoire, se retrouve dans de nombreuses civilisations sous des formes diverses.\n\n\nCompare the different behavior\n==============================\n(1) imagine_this_was_a_very_long_file_name_2025_07_02\n(2) imagine-this-was-a-very-long-file-name-2025-07-02\n\n\nTipp: Using \"-\" as a separator helps to quickly navigate long filenames and select parts\n\n\n",
 					"todoList": [
 						"Ctrl-ArrowDown",
 						"Ctrl-ArrowUp",
