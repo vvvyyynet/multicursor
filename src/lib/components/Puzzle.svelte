@@ -8,8 +8,10 @@
 	import PuzzleTodolist from './PuzzleTodolist.svelte';
 	import PuzzleTimer from './PuzzleTimer.svelte';
 	import { logToHistory } from '$lib/functions/customFunctions.svelte';
+	import { fade, fly } from 'svelte/transition';
 
 	let {
+		classes = '',
 		puzzleType = undefined,
 		title = '',
 		subtitle = '',
@@ -18,7 +20,8 @@
 		valueSolution = '_',
 		todoList = [],
 		CmdCmbChips = '',
-		setSolved = () => {}
+		setSolved = () => {},
+		direction
 	} = $props();
 
 	let time = $state({ val: 0 }); // units: 1/10 sec
@@ -96,26 +99,40 @@
 	let hasTwoCols = $derived(puzzleType === 'change');
 </script>
 
-<!-- Puzzle -->
-<h2 class="h4">{title}</h2>
-<h1 class="h1">{subtitle}</h1>
-<p class="mt-4">{explanation}</p>
+<div class={['grid grid-cols-[1fr_3fr] gap-5', classes]}>
+	<!-- Explainer -->
+	<div class="border-r-2 border-white p-2">
+		<h2 class="h4">{title}</h2>
+		<h1 class="h2">{subtitle}</h1>
+		<p class="mt-4">{explanation}</p>
 
-{#if puzzleType === 'todo'}
-	<PuzzleTodolist {cmdLog} {todoList} {resetToStart} isSolved bind:editorView />
-{/if}
+		<!-- Reset Button -->
+		<button
+			class="m-5 btn rounded-lg bg-amber-200 btn-sm px-2 text-black"
+			onclick={() => {
+				resetToStart(cmdLog);
+			}}>Restart Puzzle</button
+		>
 
-<div class="mt-10 grid w-full grid-cols-3 items-start justify-start gap-10">
-	{#if hasTwoCols}
-		<div class="col-span-1 h-full w-full">
-			<p class="">Target:</p>
-			<EditorSolution
-				valueSolution={valSolution}
-				classes="bg-surface-950-50 opacity-75 text-surface-50-950 my-2"
-			/>
-		</div>
-	{/if}
-	<div class={[' h-full w-full', hasTwoCols ? 'col-span-2' : 'col-span-3']}>
+		<!-- Todolist -->
+		{#if puzzleType === 'todo'}
+			<PuzzleTodolist {cmdLog} {todoList} bind:editorView />
+		{/if}
+
+		<!-- Target -->
+		{#if puzzleType === 'change'}
+			<div class="h-full w-full">
+				<p class="">Target:</p>
+				<EditorSolution
+					valueSolution={valSolution}
+					classes="bg-surface-950-50 opacity-75 text-surface-50-950 my-2"
+				/>
+			</div>
+		{/if}
+	</div>
+
+	<!-- Puzzle -->
+	<div class="p-2" in:fade={{ delay: 700, duration: 300 }} out:fade={{ delay: 0, duration: 300 }}>
 		<p class="">Edit here:</p>
 		<Editor
 			editorSettings

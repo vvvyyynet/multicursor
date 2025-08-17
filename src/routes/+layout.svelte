@@ -24,8 +24,8 @@
 <!-- <div class="absolute top-7 left-7 h-16 w-[60vw] border-3 bg-surface-50-950 p-4"></div> -->
 <!-- <nav class="absolute top-5 left-5 h-16 w-[60vw] border-3 bg-surface-50-950 p-4"> -->
 <!-- </div> -->
-<nav class="m-2 mx-6 border-3 bg-surface-50-950 p-4">
-	<ul class="flex justify-start gap-8">
+<nav class="mx-auto w-150 border-t-3 bg-surface-50-950 p-2">
+	<ul class="flex justify-center gap-8">
 		{#each parts as part}
 			<li>
 				<a class={[menuNormalClass, testPage(part.slug) && menuActiveClass]} href={`/${part.slug}`}

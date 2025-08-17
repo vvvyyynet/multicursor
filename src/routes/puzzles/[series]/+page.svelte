@@ -6,8 +6,8 @@
 
 	let { data } = $props();
 
-	let descOfSeries = $derived(data.puzzles?.[data.slugOfSeries].desc);
-	let puzzlesOfSeries = $derived(data.puzzles?.[data.slugOfSeries].puzzles);
+	let descOfSeries = $derived(data.sets?.[data.slugOfSeries].desc);
+	let puzzlesOfSeries = $derived(data.sets?.[data.slugOfSeries].puzzles);
 	let allSlugs = $derived(puzzlesOfSeries.map((puzzle) => puzzle.slug));
 
 	onMount(() => {

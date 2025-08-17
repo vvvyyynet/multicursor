@@ -7,13 +7,14 @@
 		"dh-special",
 		"edge-cases"
 	],
-	"puzzles": {
+	"sets": {
 		"editor-basics": {
 			"desc": {
 				"slug": "editor-basics",
 				"title1": "Editor Basics",
 				"title2": "Puzzles",
 				"text": "Learn how to efficiently navigate and select text in the editor.",
+				"text_inside": "In this series of puzzles you will learn how to efficiently navigate and select text in the editor.",
 				"footer1": "by Levyn",
 				"footer2": "Easy",
 				"imgSrc": "/img/preview-demo.png"
@@ -37,17 +38,17 @@
 					"explanation": "Use the ArrowKeys while holding Ctrl/Cmd to jump word by word. Note the different behavior between `foo-bar` and `foo_bar`",
 					"valueStart": "bbbbbbbbbbbbbbb,\nbbbbbbbbbbbbbbb,\nbbbbbbbbbbbbbbb,\nbbbbbbbbbbbbbbb,\nbbbbbbbbbbbbbbb,\nbbbbbbbbbbbbbbb,\nbbbbbbbbbbbbbbb,",
 					"valueSolution": "",
-					"todoList": []
+					"todoList": ["Ctrl-ArrowDown", "Ctrl-ArrowUp", "Ctrl-ArrowLeft", "Ctrl-ArrowRight", "Home", "End"]
 				},
 				{
-					"type": "change",
+					"type": "todo",
 					"slug": "3",
 					"title": "Navigation #1",
 					"subtitle": "Shift + ArrowKeys",
 					"explanation": "Use the ArrowKeys while holding Shift to select the text",
 					"valueStart": "ccccccccccccccc,\nccccccccccccccc,\nccccccccccccccc,\nccccccccccccccc,\nccccccccccccccc,\nccccccccccccccc,\nccccccccccccccc,",
 					"valueSolution": "",
-					"todoList": []
+					"todoList": ["Shift-ArrowDown", "Shift-ArrowUp", "Shift-ArrowLeft", "Shift-ArrowRight"]
 				},
 				{
 					"type": "change",
@@ -67,6 +68,7 @@
 				"title1": "Multicursor Basics",
 				"title2": "Puzzles",
 				"text": "Learn the keybindings to enter multicursor editing",
+				"text_inside": "Learn the keybindings to enter multicursor editing",
 				"footer1": "by Levyn",
 				"footer2": "Easy",
 				"imgSrc": "/img/preview-demo.png"
@@ -90,6 +92,7 @@
 				"title1": "Multicursor Advanced",
 				"title2": "Puzzles",
 				"text": "Learn smart patterns to make multicursor editing more efficient",
+				"text_inside": "Learn smart patterns to make multicursor editing more efficient",
 				"footer1": "by Levyn",
 				"footer2": "Medium",
 				"imgSrc": "/img/preview-demo.png"
@@ -113,6 +116,7 @@
 				"title1": "Format conversions",
 				"title2": "Puzzles",
 				"text": "Learn how to apply multicursor techniques for format conversions",
+				"text_inside": "Learn how to apply multicursor techniques for format conversions",
 				"footer1": "by Levyn",
 				"footer2": "Medium",
 				"imgSrc": "/img/preview-demo.png"
@@ -136,6 +140,7 @@
 				"title1": "DH Special",
 				"title2": "Puzzles",
 				"text": "A set of examples made for DH-scholars",
+				"text_inside": "A set of examples made for DH-scholars",
 				"footer1": "by Levyn",
 				"footer2": "Medium",
 				"imgSrc": "/img/preview-demo.png"
@@ -159,6 +164,7 @@
 				"title1": "Edge Cases",
 				"title2": "Puzzles",
 				"text": "Test the limits of multicursor editing",
+				"text_inside": "Test the limits of multicursor editing",
 				"footer1": "by Levyn",
 				"footer2": "Hard",
 				"imgSrc": "/img/preview-demo.png"

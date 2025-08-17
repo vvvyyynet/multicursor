@@ -1,6 +1,6 @@
 <script>
 	import { Square, SquareCheckBig } from '@lucide/svelte';
-	let { cmdLog, todoList, resetToStart, isSolved, editorView = $bindable() } = $props();
+	let { cmdLog, todoList, editorView = $bindable() } = $props();
 
 	const removeFromHistory = (todo) => {
 		console.log('remove', todo);
@@ -20,7 +20,7 @@
 <div class="mt-4">
 	{#each todoList as todo, i}
 		<button
-			class="relative mt-2 flex gap-4 px-1"
+			class="relative mt-2 flex items-center justify-center gap-4 px-1"
 			onclick={(ev) => {
 				removeFromHistory(todo);
 				editorView.focus();
@@ -30,17 +30,11 @@
 			{#if cmdLog.list.some((item) => {
 				return item.description.combo === todo;
 			})}
-				<SquareCheckBig />
+				<SquareCheckBig size="25" />
 			{:else}
-				<Square />
+				<Square size="25" />
 			{/if}
-			<p class="w-full text-center">{todo}</p>
+			<p class=" text-lg">{todo}</p>
 		</button>
 	{/each}
 </div>
-<button
-	class="btn rounded-lg bg-amber-200 btn-sm px-2 text-black"
-	onclick={() => {
-		resetToStart(cmdLog);
-	}}>Reset</button
->

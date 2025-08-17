@@ -89,7 +89,7 @@
 <div class="relative flex flex-col">
 	<!-- Editor -->
 	<div class={[classes, 'relative']}>
-		<div class=" absolute top-2 right-2 z-50 flex gap-2">
+		<div class="absolute top-2 right-2 z-50 flex gap-2">
 			<button
 				onclick={() => {
 					isCaseSensitive = !isCaseSensitive;

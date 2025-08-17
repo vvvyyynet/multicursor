@@ -28,6 +28,6 @@
 
 <div class="flex flex-row flex-wrap gap-10">
 	{#each data.setsList as set}
-		{@render card(data.puzzles?.[set].desc)}
+		{@render card(data.sets?.[set].desc)}
 	{/each}
 </div>
