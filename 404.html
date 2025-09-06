@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Redirecting…</title>
+    <script>
+      // Preserve original path so the SPA can handle routing
+      const base = location.origin + (location.pathname.startsWith('/<repo>/') ? '/<repo>' : '');
+      const fallback = base + '/index.html';
+      // For repo pages, if your app is at /<repo>/ adjust base variable above.
+      // Replace the history entry so browser back behaves normally.
+      history.replaceState(null, '', location.pathname + location.search + location.hash);
+      location.replace(fallback + location.hash);
+    </script>
+  </head>
+  <body></body>
+</html>
