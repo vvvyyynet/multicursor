@@ -165,7 +165,7 @@
 			<!-- Todolist -->
 			<div
 				class="absolute top-1/2 -left-20 z-90 border-2 border-surface-950-50 bg-surface-50-950 p-2"
-				in:fly|global={{ x: -200, delay: 700, duration: 300 }}
+				in:fly|global={{ x: -200, delay: 400, duration: 300 }}
 				out:fade|global={{ delay: 0, duration: 300 }}
 			>
 				<p class="font-bold">Checklist:</p>
