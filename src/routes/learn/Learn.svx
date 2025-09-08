@@ -1,3 +1,7 @@
+<script>
+import { base } from '$app/paths';
+</script>
+
 # Background
 
 <a class="" href="#">Directly jump to shortcuts</a>
@@ -68,4 +72,4 @@ Seit wann gibt es eigentlich Multicursor Editors?
     - Zeilen löschen mit `(Motiv)`
     - Liste → Aufzählung
 
-<a class="underline" href="/contribute">Einen Use-case beitragen</a>
+<a class="underline" href=`${base}/contribute`>Einen Use-case beitragen</a>
