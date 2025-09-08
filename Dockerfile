@@ -5,7 +5,7 @@ FROM node:21.7.1-alpine AS sk-build
 WORKDIR /usr/src/app
 
 COPY . /usr/src/app
-COPY build ./build
+# COPY build ./build
 
 # Can be commented out!
 RUN apk --no-cache add curl tzdata
