@@ -2,12 +2,17 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: ['main']
+    branches: ['main', 'dev']
   workflow_dispatch:
 
 jobs:
   build_site:
     runs-on: ubuntu-latest
+    services:
+      existdb:
+        image: existdb/existdb:6.2.0
+        ports:
+          - 8081:8080
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -15,22 +20,46 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 23
+          node-version: 22
           cache: npm
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
+
+      - name: start docker
+        env:
+          EXISTDB_USER: 'admin'
+          EXISTDB_PASS: ''
+          EXISTDB_SERVER: 'http://127.0.0.1:8081'
+        run: |
+          npm run installXar
+
+      - name: Free Disk Space
+        uses: jlumbroso/free-disk-space@main
+        with:
+          # this might remove tools that are actually needed,
+          # if set to "true" but frees about 6 GB
+          tool-cache: true
+
+          # all of these default to true, but feel free to set to
+          # "false" if necessary for your workflow
+          android: true
+          dotnet: true
+          haskell: true
+          large-packages: true
+          docker-images: false
+          swap-storage: true
 
       - name: build
         env:
-          BASE_PATH: '/${{ github.event.repository.name }}/multicursor'
+          BASE_PATH: '/${{ github.event.repository.name }}'
           NODE_OPTIONS: '--max_old_space_size=9000'
         run: |
           npm run build
+
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
         with:
-          # this should match the `pages` option in your adapter-static options
           path: 'build/'
 
   deploy:
@@ -46,10 +75,6 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-      - name: Deploy to GitHub Pages
+      - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
