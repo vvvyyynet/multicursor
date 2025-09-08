@@ -92,7 +92,7 @@
 					classes_animation,
 					'btn rounded-2xl border bg-secondary-100-900 p-1 px-3 text-surface-950-50 delay-300 duration-900'
 				]}
-				href="/puzzles"><ArrowLeft />Puzzle-Sets</a
+				href=`${base}/puzzles`><ArrowLeft />Puzzle-Sets</a
 			>
 		{/if}
 		<h1 class="mb-2 h6 transition-all group-hover/top:h4">

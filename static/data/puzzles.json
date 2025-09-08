@@ -17,7 +17,7 @@
 				"text_inside": "In this series of puzzles you will learn how to efficiently navigate and select text in the editor.",
 				"footer1": "by Levyn",
 				"footer2": "Easy",
-				"imgSrc": "/img/preview-demo.png"
+				"imgSrc": `${base}/img/preview-demo.png`
 			},
 			"puzzles": [
 				{
@@ -145,7 +145,7 @@
 				"text_inside": "Learn the keybindings to enter multicursor editing",
 				"footer1": "by Levyn",
 				"footer2": "Easy",
-				"imgSrc": "/img/preview-demo.png"
+				"imgSrc": `${base}/img/preview-demo.png`
 			},
 			"puzzles": [
 				{
@@ -171,7 +171,7 @@
 				"text_inside": "Learn smart patterns to make multicursor editing more efficient",
 				"footer1": "by Levyn",
 				"footer2": "Medium",
-				"imgSrc": "/img/preview-demo.png"
+				"imgSrc": `${base}/img/preview-demo.png`
 			},
 			"puzzles": [
 				{
@@ -197,7 +197,7 @@
 				"text_inside": "Learn how to apply multicursor techniques for format conversions",
 				"footer1": "by Levyn",
 				"footer2": "Medium",
-				"imgSrc": "/img/preview-demo.png"
+				"imgSrc": `${base}/img/preview-demo.png`
 			},
 			"puzzles": [
 				{
@@ -223,7 +223,7 @@
 				"text_inside": "A set of examples made for DH-scholars",
 				"footer1": "by Levyn",
 				"footer2": "Medium",
-				"imgSrc": "/img/preview-demo.png"
+				"imgSrc": `${base}/img/preview-demo.png`
 			},
 			"puzzles": [
 				{
@@ -249,7 +249,7 @@
 				"text_inside": "Test the limits of multicursor editing",
 				"footer1": "by Levyn",
 				"footer2": "Hard",
-				"imgSrc": "/img/preview-demo.png"
+				"imgSrc": `${base}/img/preview-demo.png`
 			},
 			"puzzles": [
 				{
