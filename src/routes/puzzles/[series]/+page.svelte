@@ -10,7 +10,8 @@
 	import { goto } from '$app/navigation';
 	import ArrowLeft from '@lucide/svelte/icons/arrow-left';
 	import { page } from '$app/state';
-
+	import { base } from '$app/paths';
+	
 	let { data }: PageProps = $props();
 
 	let descOfSeries = $derived(data.sets?.[data.slugOfSeries].desc);

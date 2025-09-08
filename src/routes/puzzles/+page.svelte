@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	let { data } = $props();
 </script>
 
@@ -11,7 +12,7 @@
 		]}
 	>
 		<header>
-			<img src={imgSrc} class="aspect-[21/9] w-full" alt="banner" />
+			<img src={`${base}imgSrc`} class="aspect-[21/9] w-full" alt="banner" />
 		</header>
 		<article class="space-y-4 p-4">
 			<div>
