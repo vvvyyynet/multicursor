@@ -1,10 +1,10 @@
 import type { PageLoad } from './$types';
-import { page } from '$app/state';
+import { building } from '$app/environment';
 
 export const load: PageLoad = async ({ params, url }) => {
 
 	return {
 		slugOfSeries: params.series,
-		slugOfPuzzle: url.searchParams.get('puzzle')
+		slugOfPuzzle: !building ? url.searchParams.get('puzzle') : ""
 	};
 };
