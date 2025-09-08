@@ -2,6 +2,8 @@
 	import { page } from '$app/state';
 	import '../app.css';
 
+	export const prerender = true;
+
 	let { children } = $props();
 
 	const menuNormalClass = 'text-surface-800-200';
