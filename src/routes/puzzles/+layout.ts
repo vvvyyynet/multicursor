@@ -1,8 +1,9 @@
 import { solved } from '$lib/stores/stores.svelte';
 import type { PageLoad } from './$types';
+import { base } from '$app/paths';
 
 export const load: PageLoad = async ({ fetch }) => {
-    const res = await fetch('/data/puzzles.json');
+    const res = await fetch(`${base}/data/puzzles.json`);
     let json = await res.json();
     let setsList = json.setsList;
     let sets = json.sets;

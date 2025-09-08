@@ -24,12 +24,9 @@ jobs:
       - name: build
         env:
           BASE_PATH: '/${{ github.event.repository.name }}'
-          # BASE_PATH: ''
           NODE_OPTIONS: '--max_old_space_size=9000'
         run: |
           npm run build
-      # - name: Copy 404
-      #   run: cp ./404.html build/404.html
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
         with:
@@ -53,11 +50,6 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
-      # - name: Upload artifact
-      #   uses: actions/upload-pages-artifact@v3
-      #   with:
-      #     # Upload entire repository
-      #     path: '.'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
