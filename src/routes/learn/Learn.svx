@@ -1,6 +1,6 @@
 # Background
 
-<a class="" href="#Shortcuts">Directly jump to shortcuts</a>
+<a class="" href="#">Directly jump to shortcuts</a>
 
 ## Editors
 
