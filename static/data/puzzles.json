@@ -47,7 +47,7 @@
 					"part": "Part 2",
 					"titleBreadcrumb": "Navigation with Ctrl+Arrows",
 					"title": "Now, let's jump!",
-					"explanation": "Use the ArrowKeys **while holding Ctrl/Cmd** to jump word by word. Note the different behavior between "foo-bar" and "foo_bar""
+					"explanation": "Use the ArrowKeys **while holding Ctrl/Cmd** to jump word by word. Note the different behavior between `foo-bar` and `foo_bar`"
 				},
 				{
 					"type": "todo",
@@ -56,7 +56,7 @@
 					"part": "Part 2",
 					"titleBreadcrumb": "Navigation with Ctrl+Arrows",
 					"title": "Ctr. + top/right/left/down",
-					"explanation": "Use the ArrowKeys while holding Ctrl/Cmd to jump word by word. Note the different behavior between "foo-bar" and "foo_bar".",
+					"explanation": "Use the ArrowKeys while holding Ctrl/Cmd to jump word by word. Note the different behavior between `foo-bar` and `foo_bar`.",
 					"valueStart": "Un labyrinthe (λαϐύρινθος / labúrinthos en grec ancien, labyrinthus en latin) est un tracé sinueux, muni ou non d'embranchements, d'impasses et de fausses pistes, destiné à égarer ou à ralentir celui qui cherche à s'y déplacer. Ce motif, apparu dès la Préhistoire, se retrouve dans de nombreuses civilisations sous des formes diverses.\n\n\nCompare the different behavior\n==============================\n(1) imagine_this_was_a_very_long_file_name_2025_07_02\n(2) imagine-this-was-a-very-long-file-name-2025-07-02\n\n\nTipp: Using \"-\" as a separator helps to quickly navigate long filenames and select parts\n\n\n",
 					"todoList": [
 						"Ctrl-ArrowDown",
@@ -263,7 +263,7 @@
 					"valueStart": "idCollector.all.push(layerId_polygonContourGlow);",
 					"valueSolution": "pushToPath(idCollector, 'all', layerId_polygonContourGlow);\npushToPath(idCollector, 'types.polygons.all', layerId_polygonContourGlow);\npushToPath(idCollector, 'types.polygons.contours.all', layerId_polygonContourGlow);\npushToPath(idCollector, 'types.polygons.contours.glows', layerId_polygonContourGlow);\npushToPath(idCollector, 'shapes.special.lineGlows', layerId_polygonContourGlow);",
 					"todoList": [],
-					"hint": "**Fastest Solution:** duplicate template-line down (5x), multicursor-select all "push" with Ctrl+D, 2x(Left), Ctrl+Shift+Home, 2x(Ctrl+Shift+Right), Ctrl+X, move in multicursormode to "'all'", Ctrl+D to highlight, Ctrl+V"
+					"hint": "**Fastest Solution:** duplicate template-line down (5x), multicursor-select all `push` with Ctrl+D, 2x(Left), Ctrl+Shift+Home, 2x(Ctrl+Shift+Right), Ctrl+X, move in multicursormode to `'all'`, Ctrl+D to highlight, Ctrl+V"
 				}
 			]
 		}

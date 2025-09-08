@@ -12,7 +12,7 @@
 		]}
 	>
 		<header>
-			<img src={`${base}imgSrc`} class="aspect-[21/9] w-full" alt="banner" />
+			<img src={`${base}/${imgSrc}`} class="aspect-[21/9] w-full" alt="banner" />
 		</header>
 		<article class="space-y-4 p-4">
 			<div>
