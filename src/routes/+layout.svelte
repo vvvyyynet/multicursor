@@ -30,8 +30,9 @@
 	<ul class="flex justify-center gap-8">
 		{#each parts as part}
 			<li>
-				<a class={[menuNormalClass, testPage(part.slug) && menuActiveClass]} href={`/${part.slug}`}
-					>{part.name}</a
+				<a
+					class={[menuNormalClass, testPage(part.slug) && menuActiveClass]}
+					href={`${base}/${part.slug}`}>{part.name}</a
 				>
 			</li>
 		{/each}
