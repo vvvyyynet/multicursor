@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 2,
+  "dockerfileLines": [
+    "FROM node:18-alpine",
+    "WORKDIR /app",
+    "COPY . .",
+    "RUN npm ci --production",
+    "CMD [\"node\",\"server.js\"]"
+  ]
+}
