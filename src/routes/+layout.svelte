@@ -9,11 +9,11 @@
 	const menuActiveClass = '!text-white-500 text-lg font-bold';
 
 	const parts = [
-		{ slug: 'about', name: 'About' },
-		{ slug: 'learn', name: 'Learn' },
+		{ slug: 'about', name: 'Über' },
+		{ slug: 'learn', name: 'Wissen' },
 		{ slug: 'puzzles', name: 'Puzzles' },
 		{ slug: 'editor', name: 'Editor' },
-		{ slug: 'contribute', name: 'Contribute' }
+		{ slug: 'contribute', name: 'Beitragen' }
 	];
 	const testPage = (slug) => {
 		return `${page.url.pathname}/`.includes(`/${slug}/`);

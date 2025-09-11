@@ -1,1 +1,20 @@
-...
+
+# MulticursorFun
+--- Ein Online-Lerntool für ad-hoc Zaubereien in der täglichen DH-Arbeit
+
+## Beta-Version
+
+Diese Webseite wird bis Ende 2025 laufend überarbeitet und ausgebaut. Beiträge via Github sind willkommen!
+
+
+## Zielsetzung und Funktionsumfang
+
+1) Ein **interaktiver Lehrgang** führt Schritt für Schritt in die verschiedenen Multicursor-Techniken ein. Der Lernprozess wird unterstützt durch zahlreichen Puzzles/Challenges, welche es ermöglichen, die erlernten Techniken anhand von praxisnahen Beispielen direkt auszuprobieren und einzuüben. Repetition ist wichtig, denn erst durch den Aufbau von Muskelgedächtnis, wird der Praxiseinsatz der Techniken effizient und somit wahrscheinlich. Die Puzzles sollen aber gezielt auch dabei helfen, den Anwendungs-Horizont der erlernten Techniken zu erkennen und auszuweiten. Dabei soll es Nutzer:innen möglich sein, eigene Praxisbeispiele hochzuladen und alternative Lösungswege vorzuschlagen, welche in einem Replay-Modus miteinander zu verglichen werden können.
+
+2) Ein **individualisierbarer Web-Editor** soll es ermöglichen, die erlernten Techniken direkt im Browser und an eigenen Daten anzuwenden. Beim Arbeiten mit Oxygen und insbesondere auf fremden Computern habe ich schon oft ein Tool vermisst, mit dem ich spontan (und mit meinen vertrauten Keybindings!) eine Multicursor-Umstrukturierung hätte vornehmen können. Da sämtliche Daten lokal im Browser bleiben, kann der Web-Editor ohne weiteres auch für sensible Daten verwendet werden. Insbesondere aber soll er die Einstiegshürde für technisch wenig versierte Nutzer:innen senken, welche die Vorzüge eines Multicursor-Editors bloss sporadisch nutzen möchten, und deshalb davor zurückschrecken, sich eigens dafür eine IDE wie VSCodium zu installieren.
+
+## Kontakt
+
+Levyn Bürki
+Data Science Lab / Digital Humanities Universität Bern
+levyn.buerki@unibe.ch

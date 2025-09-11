@@ -1,0 +1,10 @@
+<script>
+import { base } from '$app/paths';
+</script>
+
+# MulticursorFun
+
+**Preview:** Diese Webseite ist noch im Aufbau und wird sich im Verlauf von Herbst 2025 noch stark verändern.
+
+- <a href={`${base}/puzzles`}>Direkt zu den Puzzles</a>
+- <a href={`${base}/editor`}>Direkt zum Editor</a>

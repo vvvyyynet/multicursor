@@ -1,0 +1,65 @@
+<script>
+import { base } from '$app/paths';
+</script>
+
+# Learn Multicursor Editing
+
+## Geplanter Inhalt
+
+- Multicursor-Cheatsheet
+    - Tastaturkombinationen (Windows/MacOS/Linux)
+    - Techniken und Strategien
+    - Praxisbeispiele
+
+- Hintergrund (Editoren und Tools)
+    - Kurze Einführung in verschiedene Editoren und Konventionen (inkl. VIM, Emacs, MS Word, Obsidian, VS Codium, Eclipse, CodeMirror, Monaco, u.a.)
+    - Rückblick auf die Anfänge des Multicursor Editings
+    - Ausblick aktuelle Entwicklungen (z. B. Voinov, Rigger und Su 2022)
+    - Liste mit Converter-Tools
+
+## Multicursor-Cheatsheet
+
+### Basics 
+
+- Navigation
+    - Pfeiltasten
+    - mod+Pfeiltasten
+    - home+end (pageup/down)
+- Basic Selection
+    - shift + ...
+- Basic Moving
+    - alt + ...
+- Basic Copying
+    - mod+x/c/v
+    - middle click (which won't work in multicursor mode)
+    - mod+x/c/v for format pasting (and how not to use it in editors)
+
+### Multicursor
+
+    - Mit Maus
+        - Alt+Click
+        - Frame-Selection
+    - Mit Tastatur
+        - Mod+d
+        - Mod+Shift+l
+        - Mod+u
+    - Copy+Pasting im Multicursor-Modus
+
+### Techniken und Strategien
+
+    - Pattern-Suche in Kontext
+    - Selection von beiden Seiten her
+    - ...
+
+### Praxisbeispiele
+
+    - Leere Zeilen löschen?
+    - mod+shift+left Situationen
+    - Zeilen löschen mit speziellem Marker (z. B. `(Motiv)`)
+    - Liste → Aufzählung
+    - Exceltabelle neu strukturieren
+    - ...
+
+## Hintergrund (Editoren und Tools)
+
+- tbd.

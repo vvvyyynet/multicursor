@@ -5,7 +5,7 @@
 	let value = $state('');
 </script>
 
-Whatever you put here, stays on your computer.
+**Wichtig:** Egal was du hier schreibst, es bleibt auf deinem Computer.
 
 **Tipp:** For enhanced privacy, open this page in an incognito-tab and turn off all browser add-ons.
 

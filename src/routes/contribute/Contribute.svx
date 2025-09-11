@@ -1,7 +1,5 @@
-## Contribute a Use-case
+## Beitragen
 
-...
+tbd: [Formular für Puzzles]
 
-## Contribute a Puzzle
-
-...
+tbd: [Formular für Kommentare und andere Beiträge]
