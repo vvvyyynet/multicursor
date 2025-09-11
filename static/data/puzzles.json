@@ -21,6 +21,19 @@
 			},
 			"puzzles": [
 				{
+					"type": "change",
+					"slug": "4",
+					"img": "",
+					"part": "Part 4",
+					"titleBreadcrumb": "Replace Foo with Bar",
+					"title": "Replace Foo with Bar",
+					"subtitle": "Foo bar 2",
+					"explanation": "This one is very easy!",
+					"valueStart": "Foo Foo",
+					"valueSolution": "Bar Bar",
+					"todoList": []
+				},
+				{
 					"type": "expl",
 					"slug": "arrowkeys-expl",
 					"img": "",
@@ -120,19 +133,6 @@
 					"explanation": "Use the ArrowKeys while holding Shift to select the text",
 					"valueStart": "Un labyrinthe (λαϐύρινθος / labúrinthos en grec ancien, labyrinthus en latin) est un tracé sinueux, muni ou non d'embranchements, d'impasses et de fausses pistes, destiné à égarer ou à ralentir celui qui cherche à s'y déplacer. Ce motif, apparu dès la Préhistoire, se retrouve dans de nombreuses civilisations sous des formes diverses.\n\nLe mot désigne dans la mythologie grecque une série de galeries construites par l'architecte Dédale pour enfermer le Minotaure. En latin, le labyrinthus est un espace clos dont il est difficile de trouver l’issue.",
 					"todoList": ["Shift-Ctrl-Up", "Shift-Ctrl-Down"]
-				},
-				{
-					"type": "change",
-					"slug": "4",
-					"img": "",
-					"part": "Part 4",
-					"titleBreadcrumb": "Replace Foo with Bar",
-					"title": "Replace Foo with Bar",
-					"subtitle": "Foo bar 2",
-					"explanation": "This one is very easy!",
-					"valueStart": "Foo Foo",
-					"valueSolution": "Bar Bar",
-					"todoList": []
 				}
 			]
 		},
