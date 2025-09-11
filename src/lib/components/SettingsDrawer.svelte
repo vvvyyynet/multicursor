@@ -32,6 +32,10 @@
 			<button type="button" class="btn" onclick={drawerClose}><X /></button>
 		</header>
 		<article>
+			<p>
+				<strong>Wichtig:</strong> Dies ist bloss ein Mock-up. Die definitiven Settings werden übersichtlicher
+				gestaltet und enthalten Presets für verschiedene Tastaturlayouts und Betriebssysteme.
+			</p>
 			<SettingsKeymap />
 			<!-- <SettingsOther bind:CmdCmbChips /> -->
 		</article>
