@@ -137,8 +137,8 @@
 	</div>
 
 	{#if isSolved}
-		<div class="ml-[50vw]">
-			<Confetti size="12" x={[-6, 6]} y={[-6, 6]} amount="150" fallDistance="100px" />
+		<div class="ml-[25vw]">
+			<Confetti size="12" x={[-6, 6]} y={[-6, 6]} amount="350" fallDistance="100px" />
 		</div>
 	{/if}
 	<!-- Settings -->
