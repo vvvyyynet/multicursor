@@ -10,5 +10,14 @@
 <!-- {#each solved as s}
 	<p>{s}</p>
 {/each} -->
+<div class="dotted-bg absolute left-0 h-full w-full">
+	{@render children()}
+</div>
 
-{@render children()}
+<style>
+	.dotted-bg {
+		background-size: 15px 15px;
+		background-image: radial-gradient(#36363a 1px, #0000 0);
+		/* background-color: #1e1e22; */
+	}
+</style>

@@ -2,7 +2,6 @@
 	import About from './About.svx';
 </script>
 
-<h1 class="mb-10 h1">About</h1>
-<div class="prose-base">
+<div class="prose-base px-[15vw] pt-20">
 	<About />
 </div>

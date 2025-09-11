@@ -25,7 +25,7 @@
 <!-- <div class="absolute top-7 left-7 h-16 w-[60vw] border-3 bg-surface-50-950 p-4"></div> -->
 <!-- <nav class="absolute top-5 left-5 h-16 w-[60vw] border-3 bg-surface-50-950 p-4"> -->
 <!-- </div> -->
-<nav class="flex w-full justify-around border-t-3 bg-surface-50-950 p-2">
+<nav class="flex w-full justify-around border-t-3 bg-none p-2">
 	<ul class="flex justify-center gap-8">
 		{#each parts as part}
 			<li>
@@ -38,6 +38,6 @@
 	</ul>
 </nav>
 
-<div class="mb-50 bg-surface-50-950 p-2 px-10">
+<div class="mb-50 px-10">
 	{@render children()}
 </div>

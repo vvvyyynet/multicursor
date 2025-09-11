@@ -2,7 +2,6 @@
 	import Contribute from './Contribute.svx';
 </script>
 
-<h1 class="mb-10 h1">Contribute</h1>
-<div class="prose-base">
+<div class="prose-base px-[15vw] pt-20">
 	<Contribute />
 </div>

@@ -73,7 +73,7 @@
 	let isTopHovered = $state(false);
 </script>
 
-<div class={['mx-auto max-w-300', isSolvedCurrent ? 'bg-green-200' : 'bg-surface-50']}>
+<div class={['mx-auto max-w-300 p-5 pt-0', isSolvedCurrent ? 'bg-green-200' : 'bg-surface-50/80']}>
 	<!-- Series -->
 	<!-- svelte-ignore a11y_mouse_events_have_key_events -->
 	<div
@@ -85,7 +85,7 @@
 		onmouseleave={() => {
 			isTopHovered = false;
 		}}
-		class="group/top relative z-90 h-[20vh] w-full bg-surface-50-950 transition-all duration-500 hover:h-120 hover:pb-150"
+		class="group/top relative z-90 h-[10vh] w-full bg-transparent pt-5 transition-all duration-500 hover:h-120 hover:pb-110"
 	>
 		{#if isTopHovered}
 			<a
@@ -154,7 +154,7 @@
 		{/if}
 	</div>
 	<!-- Puzzle -->
-	<div class="z-10 mt-5 w-full p-2">
+	<div class="z-10 mt-15 w-full p-2">
 		{#each puzzlesOfSeries as puzzle (puzzle)}
 			<!-- Filter to current step only -->
 			{#if isslugOfPuzzle(puzzle.slug)}
